@@ -1,53 +1,70 @@
-<script>
+<script lang="ts">
 	import Header from './Header.svelte';
-	import './styles.css';
+	import '../app.css';
+	import ThemeSwitch from '$components/theme-switch/ThemeSwitch.svelte';
+	import { browser } from '$app/environment';
+
+	const darkModePreference = browser
+		? window.matchMedia('(prefers-color-scheme: dark)')
+		: undefined;
+
+	let prefersDarkMode = darkModePreference?.matches;
+	let themeSelection = browser ? localStorage.theme : undefined;
+
+	$: theme = browser
+		? themeSelection && themeSelection !== 'system'
+			? themeSelection
+			: prefersDarkMode
+			? 'dark'
+			: 'light'
+		: undefined;
+
+	$: {
+		darkModePreference?.addEventListener('change', () => {
+			prefersDarkMode = darkModePreference.matches;
+		});
+	}
+
+	$: {
+		if (browser) {
+			localStorage.theme = themeSelection;
+
+			if (theme === 'dark') {
+				document.documentElement.classList.add('dark');
+			} else {
+				document.documentElement.classList.remove('dark');
+			}
+		}
+	}
 </script>
 
-<div class="app">
+<svelte:head>
+	<script>
+		const useSystemTheme = !('theme' in localStorage) || localStorage.theme === 'system';
+
+		if (
+			localStorage.theme === 'dark' ||
+			(useSystemTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)
+		) {
+			document.documentElement.classList.add('dark');
+		} else {
+			document.documentElement.classList.remove('dark');
+		}
+	</script>
+</svelte:head>
+
+<div class="h-full flex-col bg-slate-100 dark:bg-black">
 	<Header />
 
 	<main>
 		<slot />
 	</main>
 
-	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
-	</footer>
+	<ThemeSwitch bind:value={themeSelection} />
 </div>
 
-<style>
-	.app {
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-	}
-
-	main {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		padding: 1rem;
-		width: 100%;
-		max-width: 64rem;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
-
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 12px;
-	}
-
-	footer a {
-		font-weight: bold;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 12px 0;
-		}
+<style lang="postcss">
+	:global(html, body) {
+		height: theme(height.full);
 	}
 </style>

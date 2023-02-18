@@ -11,11 +11,12 @@ const config = {
 		adapter: adapter()
 	},
 
-  kit: {
-    alias: {
-      '$components/*': 'src/components/*'
-    }
-  }
+	kit: {
+		alias: {
+			'$components/*': 'src/components/*',
+			'$types/*': 'src/types/*'
+		}
+	}
 };
 
 export default config;
