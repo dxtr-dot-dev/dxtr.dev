@@ -2,6 +2,19 @@
 # yarn lockfile v1
 
 
+"@dxtr.dev/casex-template@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@dxtr.dev/casex-template/-/casex-template-2.0.1.tgz#7c9fbac4e0800df6f531b0c69f4ac34a4bef26af"
+  integrity sha512-WDXGtTMaINqjjPf+jouYgfu8523CtvH8fpu4MGtgaV6xZ64ncCysZ7WoaBqvP2H9Da4jF7tSsXbqdvG85oMsZw==
+  dependencies:
+    "@dxtr.dev/casex" "^4.0.1"
+    pluralize "^8.0.0"
+
+"@dxtr.dev/casex@^4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@dxtr.dev/casex/-/casex-4.0.1.tgz#9351e0221617dcb3a45bc17cc68d38464f0e33e2"
+  integrity sha512-kfHTXTVu6eTU1U4asIkwosKnpWNhLYQ7GS1VUcnLIOebhS2Ic5BdUq9lrLC3J/+zl3cXdINpeBnb4EjSqcgSUw==
+
 "@esbuild/android-arm64@0.16.17":
   version "0.16.17"
   resolved "https://registry.yarnpkg.com/@esbuild/android-arm64/-/android-arm64-0.16.17.tgz#cf91e86df127aa3d141744edafcba0abdc577d23"
@@ -1248,6 +1261,11 @@ playwright-core@1.30.0:
   version "1.30.0"
   resolved "https://registry.yarnpkg.com/playwright-core/-/playwright-core-1.30.0.tgz#de987cea2e86669e3b85732d230c277771873285"
   integrity sha512-7AnRmTCf+GVYhHbLJsGUtskWTE33SwMZkybJ0v6rqR1boxq2x36U7p1vDRV7HO2IwTZgmycracLxPEJI49wu4g==
+
+pluralize@^8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/pluralize/-/pluralize-8.0.0.tgz#1a6fa16a38d12a1901e0320fa017051c539ce3b1"
+  integrity sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==
 
 postcss@^8.4.21:
   version "8.4.21"

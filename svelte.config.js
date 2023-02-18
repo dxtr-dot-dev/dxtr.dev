@@ -9,7 +9,13 @@ const config = {
 
 	kit: {
 		adapter: adapter()
-	}
+	},
+
+  kit: {
+    alias: {
+      '$components/*': 'src/components/*'
+    }
+  }
 };
 
 export default config;
