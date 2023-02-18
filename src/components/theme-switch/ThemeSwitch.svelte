@@ -8,7 +8,12 @@
 </script>
 
 <div class="relative">
-	<button type="button" on:click={() => (open = !open)} aria-label="dropdown item">
+	<button
+		type="button"
+		class="rounded bg-gray-900 dark:bg-white text-white dark:text-black px-4 py-1"
+		on:click={() => (open = !open)}
+		aria-label="dropdown item"
+	>
 		<span class="dark:hidden">Light</span>
 		<span class="hidden dark:inline">Dark</span>
 	</button>

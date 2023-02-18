@@ -53,7 +53,7 @@
 	</script>
 </svelte:head>
 
-<div class="h-full flex-col bg-slate-100 dark:bg-black">
+<div class="h-full flex-col bg-slate-100 dark:bg-black p-4">
 	<Header />
 
 	<main>
