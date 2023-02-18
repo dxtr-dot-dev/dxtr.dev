@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { ThemeSelection } from '$types/Theme';
+	import { clickOutside } from '$actions/click-outside';
 
 	export let value: ThemeSelection;
 	const themeValues: ThemeSelection[] = ['light', 'dark', 'system'];
@@ -19,10 +20,14 @@
 	</button>
 
 	{#if open}
-		<div class="absolute top-full mt-1 w-24 bg-white dark:bg-gray-900 rounded overflow-hidden">
+		<div
+			class="absolute top-full mt-1 w-24 bg-gray-200 dark:bg-gray-900 rounded overflow-hidden"
+			use:clickOutside
+			on:outclick={() => (open = false)}
+		>
 			{#each themeValues as themeValue}
 				<button
-					class="capitalize p-2 w-full text-left"
+					class="capitalize p-2 w-full text-left dark:hover:bg-cyan-900 hover:bg-cyan-100 transition"
 					class:selected={themeValue === value}
 					type="button"
 					on:click={() => (value = themeValue)}>{themeValue}</button
@@ -34,6 +39,6 @@
 
 <style lang="postcss">
 	.selected {
-		@apply bg-red-500 text-white;
+		@apply !bg-cyan-600 text-white;
 	}
 </style>

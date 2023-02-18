@@ -20,6 +20,7 @@ const config = {
 		}),
 
 		alias: {
+			'$actions/*': 'src/actions/*',
 			'$components/*': 'src/components/*',
 			'$types/*': 'src/types/*'
 		}
