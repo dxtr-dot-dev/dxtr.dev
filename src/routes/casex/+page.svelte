@@ -6,7 +6,8 @@
 	let text = 'The super duper';
 	let pattern = 'ca-se';
 
-	$: casedText = casex({ text, pattern });
+	$: casedText =
+		pattern.length >= 4 ? casex({ text, pattern }) : 'Please provide a valid casex pattern';
 </script>
 
 <h1 class="text-3xl font-bold text-blue-500">Casex</h1>
