@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+	font-family: Mokoto;
+	src: url(/src/lib/fonts/Mokoto.otf);
+}
+
+.dark {
+	color-scheme: dark;
+}
+
+html,
+body,
+#storybook-root {
+	height: theme(height.full);
+	@apply font-body;
+}

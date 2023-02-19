@@ -1,3 +1,9 @@
+import '@fontsource/courier-prime';
+import '@fontsource/fira-mono';
+import LayoutDecorator from './layout-decorator.svelte';
+
+import '../src/app.css';
+
 export const parameters = {
 	backgrounds: {
 		default: 'light'
@@ -8,5 +14,8 @@ export const parameters = {
 			color: /(background|color)$/i,
 			date: /Date$/
 		}
-	}
+	},
+	layout: 'fullscreen'
 };
+
+export const decorators = [() => LayoutDecorator];

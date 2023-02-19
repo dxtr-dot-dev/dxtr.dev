@@ -5,7 +5,6 @@ import Button from './button.svelte';
 const meta = {
 	title: 'Example/Button',
 	component: Button,
-	tags: ['autodocs'],
 	args: {
 		storybookSlot: 'Click me'
 	}

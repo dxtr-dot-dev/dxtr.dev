@@ -1159,6 +1159,11 @@
   resolved "https://registry.yarnpkg.com/@fal-works/esbuild-plugin-global-externals/-/esbuild-plugin-global-externals-2.1.2.tgz#c05ed35ad82df8e6ac616c68b92c2282bd083ba4"
   integrity sha512-cEee/Z+I12mZcFJshKcCqC8tuX5hG3s+d+9nZ3LabqKF1vKdF41B92pJVCBggjAGORAeOzyyDDKrZwIkLffeOQ==
 
+"@fontsource/courier-prime@^4.5.9":
+  version "4.5.9"
+  resolved "https://registry.yarnpkg.com/@fontsource/courier-prime/-/courier-prime-4.5.9.tgz#2466eec9469507a3860502008900e130579d0005"
+  integrity sha512-jN5F/WvA7x1OuaOy2Hr2FzlA3EZizXPGTvjmR5YIb+Hc+SaDUT/ckJy8zbUc8sb6SsS6cIbG+lFDkZRYjJe91Q==
+
 "@fontsource/fira-mono@^4.5.10":
   version "4.5.10"
   resolved "https://registry.yarnpkg.com/@fontsource/fira-mono/-/fira-mono-4.5.10.tgz#443be4b2b4fc6e685b88431fcfdaf8d5f5639bbf"

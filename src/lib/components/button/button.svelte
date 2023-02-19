@@ -3,6 +3,6 @@
 	export let storybookSlot: string | undefined = undefined;
 </script>
 
-<button class="bg-white-500" {type} on:click>
+<button class="bg-primary" {type} on:click>
 	<slot>{storybookSlot}</slot>
 </button>

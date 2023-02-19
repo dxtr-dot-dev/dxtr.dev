@@ -15,11 +15,10 @@
 		"storybook": "storybook dev -p 6006",
 		"build-storybook": "storybook build"
 	},
-	"dependencies": {
-		"@dxtr.dev/casex": "^4.0.1",
-		"@dxtr.dev/casex-template": "^2.0.1"
-	},
 	"devDependencies": {
+		"@dxtr.dev/casex": "^4.0.1",
+		"@dxtr.dev/casex-template": "^2.0.1",
+		"@fontsource/courier-prime": "^4.5.9",
 		"@fontsource/fira-mono": "^4.5.10",
 		"@neoconfetti/svelte": "^1.0.0",
 		"@playwright/test": "^1.30.0",

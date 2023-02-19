@@ -1,4 +1,7 @@
 <script lang="ts">
+	import '@fontsource/courier-prime';
+	import '@fontsource/fira-mono';
+
 	import { page } from '$app/stores';
 	import ThemeDropdownContainer from '$lib/containers/theme-dropdown-container.svelte';
 	import '../app.css';
@@ -20,6 +23,10 @@
 </svelte:head>
 
 <div class="h-full flex-col bg-slate-100 dark:bg-black p-4">
+	<header>
+		<h1 class="font-heading text-primary text-center text-2xl">DXTR.DEV</h1>
+	</header>
+
 	<nav class="py-2">
 		<ul class="flex gap-4">
 			<li aria-current={$page.url.pathname === '/casex' ? 'page' : undefined}>
@@ -40,9 +47,3 @@
 		<slot />
 	</main>
 </div>
-
-<style lang="postcss">
-	:global(html, body) {
-		height: theme(height.full);
-	}
-</style>
