@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { ThemeSelection } from '$types/Theme';
-	import { clickOutside } from '$actions/click-outside';
+	import { clickOutside } from '$lib/actions/click-outside';
 
 	export let value: ThemeSelection;
 	const themeValues: ThemeSelection[] = ['light', 'dark', 'system'];

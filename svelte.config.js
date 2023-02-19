@@ -17,15 +17,7 @@ const config = {
 			// instead of creating a single one for the entire app.
 			// if `edge` is true, this option cannot be used
 			split: false
-		}),
-
-		alias: {
-			'$actions/*': 'src/actions/*',
-			'$components/*': 'src/components/*',
-			'$containers/*': 'src/containers/*',
-			'$layouts/*': 'src/layouts/*',
-			'$types/*': 'src/types/*'
-		}
+		})
 	}
 };
 

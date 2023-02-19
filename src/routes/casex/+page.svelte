@@ -1,6 +1,6 @@
 <script lang="ts">
-	import FormGroup from '$components/form-group/form-group.svelte';
-	import TextInput from '$components/text-input/text-input.svelte';
+	import FormGroup from '$lib/components/form-group/form-group.svelte';
+	import TextInput from '$lib/components/text-input/text-input.svelte';
 	import { casex } from '@dxtr.dev/casex';
 
 	let text = 'The super duper';

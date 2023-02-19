@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import ThemeDropdownContainer from '$containers/theme-dropdown-container.svelte';
+	import ThemeDropdownContainer from '$lib/containers/theme-dropdown-container.svelte';
 	import '../app.css';
 </script>
 
