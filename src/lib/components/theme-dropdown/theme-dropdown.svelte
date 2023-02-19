@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { ThemeSelection } from '$types/Theme';
+	import type { ThemeSelection } from '$lib/types/Theme';
 	import { clickOutside } from '$lib/actions/click-outside';
 
 	export let value: ThemeSelection;
@@ -11,7 +11,7 @@
 <div class="relative" use:clickOutside on:outclick={() => (open = false)}>
 	<button
 		type="button"
-		class="rounded bg-gray-900 dark:bg-white text-white dark:text-black px-4 py-1"
+		class="rounded bg-paper text-body px-4 py-1"
 		on:click={() => (open = !open)}
 		aria-label="dropdown item"
 	>
@@ -20,10 +20,10 @@
 	</button>
 
 	{#if open}
-		<div class="absolute top-full mt-1 w-24 bg-gray-200 dark:bg-gray-900 rounded overflow-hidden">
+		<div class="absolute top-full mt-1 w-24 bg-paper rounded overflow-hidden">
 			{#each themeValues as themeValue}
 				<button
-					class="capitalize p-2 w-full text-left dark:hover:bg-cyan-900 hover:bg-cyan-100 transition"
+					class="capitalize p-2 w-full text-left hover:bg-primary hover:bg-opacity-50 transition"
 					class:selected={themeValue === value}
 					type="button"
 					on:click={() => (value = themeValue)}>{themeValue}</button
@@ -35,6 +35,6 @@
 
 <style lang="postcss">
 	.selected {
-		@apply !bg-cyan-600 text-white;
+		@apply !bg-primary !bg-opacity-100 text-body-contrast;
 	}
 </style>

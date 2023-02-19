@@ -2,18 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-	font-family: Mokoto;
-	src: url(/src/lib/fonts/Mokoto.otf);
-}
+@layer base {
+	:root:not(.dark) {
+		--color-primary: 20, 66, 250; /* yellow.400 complementary #1442FA */
+		--color-background: 243, 244, 246; /* gray.100 */
+		--color-paper: 209, 213, 239; /* gray.300 */
+		--color-body: 0, 0, 0; /* black */
+		--color-body-contrast: 255, 255, 255; /* white */
+		--color-success: 22, 163, 74; /* green.600 */
+		--color-info: 99, 102, 241; /* indigo.500 */
+		--color-warn: 251, 191, 36; /* amber.400 */
+		--color-error: 220, 38, 38; /* red.600 */
+	}
 
-.dark {
-	color-scheme: dark;
-}
+	:root.dark {
+		--color-primary: 250, 204, 21; /* yellow.400 */
+		--color-secondary: 181, 250, 20; /* yellow.400 analogous: #B5FA14 */
+		--color-tertiary: 250, 89, 20; /* yellow.400 analogous 2: #FA5914 */
+		--color-background: 0, 0, 0; /* black */
+		--color-paper: 39, 39, 42; /* zinc.800 */
+		--color-body: 254, 252, 232; /* yellow.50 */
+		--color-body-contrast: 0, 0, 0; /* black */
+		--color-success: 22, 163, 74; /* green.600 */
+		--color-info: 99, 102, 241; /* indigo.500 */
+		--color-warn: 251, 191, 36; /* amber.400 */
+		--color-error: 220, 38, 38; /* red.600 */
+	}
 
-html,
-body,
-#storybook-root {
-	height: theme(height.full);
-	@apply font-body;
+	@font-face {
+		font-family: Mokoto;
+		src: url(/src/lib/fonts/Mokoto.otf);
+	}
+
+	.dark {
+		color-scheme: dark;
+	}
+
+	:root {
+		@apply font-body;
+		@apply h-full flex-col bg-background;
+		@apply transition-colors;
+	}
+
+	:root,
+	body,
+	#storybook-root {
+		height: theme(height.full);
+	}
 }

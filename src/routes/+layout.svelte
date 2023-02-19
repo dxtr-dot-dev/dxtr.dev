@@ -22,13 +22,13 @@
 	</script>
 </svelte:head>
 
-<div class="h-full flex-col bg-slate-100 dark:bg-black p-4">
-	<header>
+<div class="flex-col h-full">
+	<header class="p-4">
 		<h1 class="font-heading text-primary text-center text-2xl">DXTR.DEV</h1>
 	</header>
 
-	<nav class="py-2">
-		<ul class="flex gap-4">
+	<nav>
+		<ul class="gap-4 flex justify-center">
 			<li aria-current={$page.url.pathname === '/casex' ? 'page' : undefined}>
 				<a href="/casex">Casex</a>
 			</li>
@@ -43,7 +43,7 @@
 		</ul>
 	</nav>
 
-	<main>
+	<main class="p-4">
 		<slot />
 	</main>
 </div>
