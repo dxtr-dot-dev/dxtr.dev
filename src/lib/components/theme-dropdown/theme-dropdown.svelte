@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { ThemeSelection } from '$lib/types/Theme';
 	import { clickOutside } from '$lib/actions/click-outside';
+	import ButtonOrLink from '$lib/components/button-or-link/button-or-link.svelte';
 
 	export let value: ThemeSelection;
 	const themeValues: ThemeSelection[] = ['light', 'dark', 'system'];
@@ -8,25 +9,22 @@
 	let open = false;
 </script>
 
-<div class="relative" use:clickOutside on:outclick={() => (open = false)}>
-	<button
-		type="button"
-		class="rounded bg-paper text-body px-4 py-1"
-		on:click={() => (open = !open)}
-		aria-label="dropdown item"
-	>
+<div class="relative w-20" use:clickOutside on:outclick={() => (open = false)}>
+	<ButtonOrLink type="button" on:click={() => (open = !open)} fullWidth>
 		<span class="dark:hidden">Light</span>
 		<span class="hidden dark:inline">Dark</span>
-	</button>
+	</ButtonOrLink>
 
 	{#if open}
-		<div class="absolute top-full mt-1 w-24 bg-paper rounded overflow-hidden">
+		<div class="absolute top-full mt-1 w-24 rounded overflow-hidden">
 			{#each themeValues as themeValue}
-				<button
-					class="capitalize p-2 w-full text-left hover:bg-primary hover:bg-opacity-50 transition"
-					class:selected={themeValue === value}
-					type="button"
-					on:click={() => (value = themeValue)}>{themeValue}</button
+				<ButtonOrLink
+					color={themeValue === value ? 'primary' : 'paper'}
+					fullWidth
+					shape="squared"
+					textTransform="capitalize"
+					noHoverEffect={themeValue === value}
+					on:click={() => (value = themeValue)}>{themeValue}</ButtonOrLink
 				>
 			{/each}
 		</div>
@@ -34,7 +32,4 @@
 </div>
 
 <style lang="postcss">
-	.selected {
-		@apply !bg-primary !bg-opacity-100 text-body-contrast;
-	}
 </style>

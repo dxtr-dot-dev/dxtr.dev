@@ -5,6 +5,8 @@
 @layer base {
 	:root:not(.dark) {
 		--color-primary: 20, 66, 250; /* yellow.400 complementary #1442FA */
+		--color-secondary: 89, 20, 250, 1; /* analogous 1: #5914FA */
+		--color-tertiary: 20, 181, 250; /* analogous 2: #14B5FA */
 		--color-background: 243, 244, 246; /* gray.100 */
 		--color-paper: 209, 213, 239; /* gray.300 */
 		--color-body: 0, 0, 0; /* black */
@@ -17,8 +19,8 @@
 
 	:root.dark {
 		--color-primary: 250, 204, 21; /* yellow.400 */
-		--color-secondary: 181, 250, 20; /* yellow.400 analogous: #B5FA14 */
-		--color-tertiary: 250, 89, 20; /* yellow.400 analogous 2: #FA5914 */
+		--color-secondary: 181, 250, 20; /* analogous 1: #B5FA14 */
+		--color-tertiary: 250, 89, 20; /* analogous 2: #FA5914 */
 		--color-background: 0, 0, 0; /* black */
 		--color-paper: 39, 39, 42; /* zinc.800 */
 		--color-body: 254, 252, 232; /* yellow.50 */
@@ -39,9 +41,8 @@
 	}
 
 	:root {
-		@apply font-body;
+		@apply font-body text-body;
 		@apply h-full flex-col bg-background;
-		@apply transition-colors;
 	}
 
 	:root,

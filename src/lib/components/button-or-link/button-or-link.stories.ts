@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
 
-import Button from './button.svelte';
+import ButtonOrLink from './button-or-link.svelte';
 
 const meta = {
-	title: 'Example/Button',
-	component: Button,
+	title: 'components/ButtonOrLink',
+	component: ButtonOrLink,
 	args: {
 		storybookSlot: 'Click me'
 	}
-} satisfies Meta<Button>;
+} satisfies Meta<ButtonOrLink>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
