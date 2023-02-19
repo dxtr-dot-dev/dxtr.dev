@@ -37,6 +37,7 @@
 		"@typescript-eslint/eslint-plugin": "^5.52.0",
 		"@typescript-eslint/parser": "^5.52.0",
 		"autoprefixer": "^10.4.13",
+		"chromatic": "^6.17.0",
 		"eslint": "^8.34.0",
 		"eslint-config-prettier": "^8.6.0",
 		"eslint-plugin-storybook": "^0.6.10",
