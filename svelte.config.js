@@ -22,6 +22,8 @@ const config = {
 		alias: {
 			'$actions/*': 'src/actions/*',
 			'$components/*': 'src/components/*',
+			'$containers/*': 'src/containers/*',
+			'$layouts/*': 'src/layouts/*',
 			'$types/*': 'src/types/*'
 		}
 	}

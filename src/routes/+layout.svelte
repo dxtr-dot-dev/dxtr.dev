@@ -1,41 +1,7 @@
 <script lang="ts">
-	import Header from './Header.svelte';
+	import { page } from '$app/stores';
+	import ThemeDropdownContainer from '$containers/theme-dropdown-container.svelte';
 	import '../app.css';
-	import ThemeSwitch from '$components/theme-switch/ThemeSwitch.svelte';
-	import { browser } from '$app/environment';
-
-	const darkModePreference = browser
-		? window.matchMedia('(prefers-color-scheme: dark)')
-		: undefined;
-
-	let prefersDarkMode = darkModePreference?.matches;
-	let themeSelection = browser ? localStorage.theme : undefined;
-
-	$: theme = browser
-		? themeSelection && themeSelection !== 'system'
-			? themeSelection
-			: prefersDarkMode
-			? 'dark'
-			: 'light'
-		: undefined;
-
-	$: {
-		darkModePreference?.addEventListener('change', () => {
-			prefersDarkMode = darkModePreference.matches;
-		});
-	}
-
-	$: {
-		if (browser) {
-			localStorage.theme = themeSelection;
-
-			if (theme === 'dark') {
-				document.documentElement.classList.add('dark');
-			} else {
-				document.documentElement.classList.remove('dark');
-			}
-		}
-	}
 </script>
 
 <svelte:head>
@@ -54,13 +20,25 @@
 </svelte:head>
 
 <div class="h-full flex-col bg-slate-100 dark:bg-black p-4">
-	<Header />
+	<nav class="py-2">
+		<ul class="flex gap-4">
+			<li aria-current={$page.url.pathname === '/casex' ? 'page' : undefined}>
+				<a href="/casex">Casex</a>
+			</li>
+
+			<li aria-current={$page.url.pathname === '/casex-template' ? 'page' : undefined}>
+				<a href="/casex-template">Casex Template</a>
+			</li>
+
+			<li>
+				<ThemeDropdownContainer />
+			</li>
+		</ul>
+	</nav>
 
 	<main>
 		<slot />
 	</main>
-
-	<ThemeSwitch bind:value={themeSelection} />
 </div>
 
 <style lang="postcss">

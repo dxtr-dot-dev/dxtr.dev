@@ -8,7 +8,7 @@
 	let open = false;
 </script>
 
-<div class="relative">
+<div class="relative" use:clickOutside on:outclick={() => (open = false)}>
 	<button
 		type="button"
 		class="rounded bg-gray-900 dark:bg-white text-white dark:text-black px-4 py-1"
@@ -20,11 +20,7 @@
 	</button>
 
 	{#if open}
-		<div
-			class="absolute top-full mt-1 w-24 bg-gray-200 dark:bg-gray-900 rounded overflow-hidden"
-			use:clickOutside
-			on:outclick={() => (open = false)}
-		>
+		<div class="absolute top-full mt-1 w-24 bg-gray-200 dark:bg-gray-900 rounded overflow-hidden">
 			{#each themeValues as themeValue}
 				<button
 					class="capitalize p-2 w-full text-left dark:hover:bg-cyan-900 hover:bg-cyan-100 transition"
