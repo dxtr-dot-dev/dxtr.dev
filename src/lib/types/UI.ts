@@ -7,7 +7,8 @@ export type UIColor =
 	| 'info'
 	| 'warn'
 	| 'error'
-	| 'transparent';
+	| 'transparent'
+	| 'body';
 
 export type UIVariant = 'filled' | 'outlined';
 

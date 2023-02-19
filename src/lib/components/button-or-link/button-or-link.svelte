@@ -3,6 +3,7 @@
 	import type { AriaRole } from '$lib/types/AriaRole';
 
 	export let color: UIColor = 'primary';
+	export let hoverColor: UIColor = 'body';
 	export let variant: UIVariant = 'filled';
 	export let shape: UIShape = 'rounded';
 	export let fullWidth: boolean = false;
@@ -35,7 +36,8 @@
 			.filter(Boolean)
 			.join(' '),
 		'aria-label': ariaLabel,
-		role: role
+		role: role,
+		style: `--button-color: var(--color-${color}); --button-hover-color: var(--color-${hoverColor});`
 	};
 </script>
 
@@ -44,7 +46,7 @@
 		<slot>{storybookSlot}</slot>
 	</a>
 {:else}
-	<button {type} on:click style="--button-color: rgb(var(--color-{color}))" {...props} role="">
+	<button {type} on:click {...props} role="">
 		<slot>{storybookSlot}</slot>
 	</button>
 {/if}
@@ -65,7 +67,7 @@
 	}
 
 	.filled {
-		background: var(--button-color);
+		background: rgb(var(--button-color));
 		box-shadow: inset 1000px 1000px transparent;
 	}
 
@@ -74,7 +76,7 @@
 	}
 
 	.filled:not(.no-hover):hover {
-		box-shadow: inset 1000px 1000px rgba(var(--color-body), 0.25);
+		box-shadow: inset 1000px 1000px rgba(var(--button-hover-color), 0.25);
 	}
 
 	.outlined {

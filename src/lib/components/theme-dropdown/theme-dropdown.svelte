@@ -20,6 +20,7 @@
 			{#each themeValues as themeValue}
 				<ButtonOrLink
 					color={themeValue === value ? 'primary' : 'paper'}
+					hoverColor="primary"
 					fullWidth
 					shape="squared"
 					textTransform="capitalize"
