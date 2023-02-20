@@ -34,8 +34,8 @@
 						hoverColor="primary"
 						hoverEffect={item.value === value ? 'none' : 'inner-shadow'}
 						fullWidth
-						textTransform="capitalize"
-						textAlign="left"
+						transform="capitalize"
+						justify="left"
 						on:click={() => (value = item.value)}
 					>
 						<i class={`bi bi-${item.icon}`} /> {item.value}</ButtonOrLink

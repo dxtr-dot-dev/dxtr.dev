@@ -4,7 +4,7 @@
 		UIEffect,
 		UIShape,
 		UISize,
-		UITextAlign,
+		UITextAlign as UIJustify,
 		UITextTransform,
 		UIVariant
 	} from '$lib/types/UI';
@@ -23,7 +23,7 @@
 	export let variant: UIVariant = href ? 'text' : 'fill';
 	export let shape: UIShape = 'rounded';
 	export let textTransform: UITextTransform = 'none';
-	export let textAlign: UITextAlign = 'center';
+	export let justify: UIJustify = 'center';
 	export let fullWidth: boolean = false;
 
 	export let color: UIColor = 'primary';
@@ -62,7 +62,7 @@
 			`shape--${shape}`,
 			`hover-effect--${hoverEffectWithFallback}`,
 			`text-transform--${textTransform}`,
-			`text-align--${textAlign}`,
+			`text-align--${justify}`,
 			fullWidth && 'full-width'
 		]),
 

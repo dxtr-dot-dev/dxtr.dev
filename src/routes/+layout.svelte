@@ -25,8 +25,8 @@
 </svelte:head>
 
 <div class="flex-col h-full max-w-screen-lg mx-auto">
-	<header class="flex py-4 px-2">
-		<a href="/">
+	<header class="flex flex-col md:flex-row items-center py-4 px-2">
+		<a href="/" class="h-6 overflow-hidden">
 			<h1 class="font-heading text-primary text-center text-2xl">DXTR.DEV</h1>
 		</a>
 
@@ -49,7 +49,7 @@
 		</nav>
 	</header>
 
-	<main class="p-4">
+	<main class="px-2">
 		<slot />
 	</main>
 </div>

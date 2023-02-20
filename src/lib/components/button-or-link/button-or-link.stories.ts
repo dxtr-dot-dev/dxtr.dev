@@ -120,13 +120,13 @@ export const FullWidth: Story = {
 // text transform
 
 export const TextTransformCapitalize: Story = {
-	args: { textTransform: 'capitalize' }
+	args: { transform: 'capitalize' }
 };
 
 export const TextTransformUppercase: Story = {
-	args: { textTransform: 'uppercase' }
+	args: { transform: 'uppercase' }
 };
 
 export const TextTransformLowercase: Story = {
-	args: { textTransform: 'lowercase' }
+	args: { transform: 'lowercase' }
 };
