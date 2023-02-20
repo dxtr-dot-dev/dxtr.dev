@@ -5,6 +5,7 @@
 	import { page } from '$app/stores';
 	import ThemeDropdownContainer from '$lib/containers/theme-dropdown-container.svelte';
 	import '../app.css';
+	import ButtonOrLink from '$lib/components/button-or-link/button-or-link.svelte';
 </script>
 
 <svelte:head>
@@ -30,11 +31,15 @@
 	<nav>
 		<ul class="gap-4 flex justify-center">
 			<li aria-current={$page.url.pathname === '/casex' ? 'page' : undefined}>
-				<a href="/casex">Casex</a>
+				<ButtonOrLink href="/casex" variant="text" color="body" hoverColor="secondary"
+					>Casex</ButtonOrLink
+				>
 			</li>
 
 			<li aria-current={$page.url.pathname === '/casex-template' ? 'page' : undefined}>
-				<a href="/casex-template">Casex Template</a>
+				<ButtonOrLink href="/casex-template" variant="text" color="body" hoverColor="tertiary"
+					>Casex Template</ButtonOrLink
+				>
 			</li>
 
 			<li>

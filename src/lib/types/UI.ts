@@ -10,10 +10,10 @@ export type UIColor =
 	| 'transparent'
 	| 'body';
 
-export type UIEffect = 'inner-shadow' | 'outer-shadow';
+export type UIEffect = 'inner-shadow' | 'outer-shadow' | 'text-color' | 'none';
 
-export type UIVariant = 'filled' | 'outlined';
+export type UIVariant = 'text' | 'filled' | 'outlined';
 
 export type UIShape = 'squared' | 'rounded' | 'rounded-full';
 
-export type UITextTransform = 'capitalize' | 'uppercase' | 'lowercase';
+export type UITextTransform = 'capitalize' | 'uppercase' | 'lowercase' | 'none';

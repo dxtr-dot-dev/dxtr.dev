@@ -3,14 +3,16 @@
 	import type { AriaRole } from '$lib/types/AriaRole';
 	import { c } from '$lib/utils/c';
 
-	export let color: UIColor = 'primary';
-	export let hoverColor: UIColor | undefined = undefined;
-	export let hoverEffect: UIEffect | false = 'outer-shadow';
-
 	export let variant: UIVariant = 'filled';
 	export let shape: UIShape = 'rounded';
 	export let fullWidth: boolean = false;
-	export let textTransform: UITextTransform | undefined = undefined;
+	export let textTransform: UITextTransform = 'none';
+
+	export let color: UIColor = 'primary';
+	export let hoverColor: UIColor | undefined = undefined;
+
+	export let hoverEffect: UIEffect | undefined = undefined;
+	$: hoverEffectWithFallback = hoverEffect || variant === 'text' ? 'text-color' : 'outer-shadow';
 
 	// button
 	export let type: 'reset' | 'button' | 'submit' = 'submit';
@@ -30,7 +32,7 @@
 		class: c([
 			`variant--${variant}`,
 			`shape--${shape}`,
-			`hover-effect--${hoverEffect || 'none'}`,
+			`hover-effect--${hoverEffectWithFallback}`,
 			`text-transform--${textTransform}`,
 			fullWidth && 'full-width'
 		]),
@@ -76,6 +78,10 @@
 		color: rgb(var(--button-color));
 	}
 
+	.variant--text {
+		color: rgb(var(--button-color));
+	}
+
 	/* shape */
 
 	.shape--squared {
@@ -101,6 +107,10 @@
 
 	.hover-effect--outer-shadow:hover {
 		@apply shadow-lg;
+	}
+
+	.hover-effect--text-color:hover {
+		color: rgb(var(--button-hover-color));
 	}
 
 	/* text transform */
