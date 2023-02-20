@@ -11,7 +11,3 @@
 .auto-ui-variant--text {
 	color: rgb(var(--auto-ui-color));
 }
-
-.auto-ui-variant--text:hover {
-	text-decoration: underline;
-}

@@ -34,7 +34,7 @@
 	export let transition: AutoUITransition = 'regular';
 	export let width: AutoUIWidth = 'auto';
 
-	const auto = autoUI({
+	$: auto = autoUI({
 		color,
 		display,
 		hoverEffect,
@@ -65,3 +65,9 @@
 		<slot>{storybookSlot}</slot>
 	</button>
 {/if}
+
+<style>
+	.auto-ui-variant--text:hover {
+		text-decoration: underline;
+	}
+</style>
