@@ -8,8 +8,8 @@
 	export let value: ThemeSelection;
 
 	const options: PopoverSelectOption<ThemeSelection>[] = [
-		{ icon: 'sun-fill', value: 'light', label: 'light' },
-		{ icon: 'moon-fill', value: 'dark', label: 'dark' },
+		{ icon: 'sun', value: 'light', label: 'light' },
+		{ icon: 'moon-stars', value: 'dark', label: 'dark' },
 		{ icon: 'display', value: 'system', label: 'system' }
 	];
 
@@ -23,7 +23,7 @@
 		</span>
 
 		<span class="hidden dark:inline">
-			<i class="bi bi-moon-stars" />
+			<i class="bi bi-moon-stars-fill" />
 		</span>
 	</ButtonOrLink>
 

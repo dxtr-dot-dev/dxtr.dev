@@ -4,11 +4,11 @@
 	import 'bootstrap-icons/font/bootstrap-icons.css';
 
 	import { page } from '$app/stores';
-	import ThemeDropdownContainer from '$lib/containers/theme-dropdown-container.svelte';
 	import ButtonOrLink from '$lib/components/button-or-link/button-or-link.svelte';
 
-	import '../app.css';
 	import '$lib/auto-ui/styles/auto-ui.css';
+	import ThemeSwitcherContainer from '$lib/containers/theme-switcher-container.svelte';
+	import '../app.css';
 </script>
 
 <svelte:head>
@@ -45,7 +45,7 @@
 				</li>
 
 				<li>
-					<ThemeDropdownContainer />
+					<ThemeSwitcherContainer />
 				</li>
 			</ul>
 		</nav>
