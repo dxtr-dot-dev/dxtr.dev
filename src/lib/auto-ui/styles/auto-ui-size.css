@@ -1,0 +1,28 @@
+.auto-ui-size--xs {
+	@apply text-xs;
+	@apply px-1.5 py-0.5;
+	@apply gap-0.5;
+}
+
+.auto-ui-size--sm {
+	@apply text-sm;
+	@apply px-2 py-1;
+	@apply gap-1;
+}
+
+.auto-ui-size--md {
+	@apply px-3 py-1.5;
+	@apply gap-2;
+}
+
+.auto-ui-size--lg {
+	@apply px-5 py-2.5;
+	@apply text-lg;
+	@apply gap-3;
+}
+
+.auto-ui-size--xl {
+	@apply px-6 py-3;
+	@apply text-xl;
+	@apply gap-4;
+}

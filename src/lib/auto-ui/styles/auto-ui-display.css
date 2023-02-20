@@ -1,0 +1,7 @@
+.auto-ui-display--flex {
+	@apply flex;
+}
+
+.auto-ui-display--inline-flex {
+	@apply inline-flex;
+}

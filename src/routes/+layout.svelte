@@ -5,8 +5,10 @@
 
 	import { page } from '$app/stores';
 	import ThemeDropdownContainer from '$lib/containers/theme-dropdown-container.svelte';
-	import '../app.css';
 	import ButtonOrLink from '$lib/components/button-or-link/button-or-link.svelte';
+
+	import '../app.css';
+	import '$lib/auto-ui/styles/auto-ui.css';
 </script>
 
 <svelte:head>

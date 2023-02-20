@@ -1,0 +1,19 @@
+.auto-ui-transition--very-slow {
+	transition: 1s all ease;
+}
+
+.auto-ui-transition--slow {
+	transition: 0.5s all ease;
+}
+
+.auto-ui-transition--regular {
+	transition: 0.25s all ease;
+}
+
+.auto-ui-transition--fast {
+	transition: 0.125s all ease;
+}
+
+.auto-ui-transition--very-fast {
+	transition: 0.0675s all ease;
+}

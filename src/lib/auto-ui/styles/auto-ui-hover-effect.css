@@ -1,0 +1,15 @@
+.auto-ui-hover-effect--inner-shadow {
+	box-shadow: inset 1000px 1000px transparent;
+}
+
+.auto-ui-hover-effect--inner-shadow:hover {
+	box-shadow: inset 1000px 1000px rgba(var(--auto-ui-hover-color), 0.25);
+}
+
+.auto-ui-hover-effect--outer-shadow:hover {
+	@apply shadow-lg;
+}
+
+.auto-ui-hover-effect--text-color:hover {
+	color: rgb(var(--auto-ui-hover-color));
+}

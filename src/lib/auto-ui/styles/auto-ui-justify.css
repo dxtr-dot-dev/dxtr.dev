@@ -1,0 +1,11 @@
+.auto-ui-justify--start {
+	@apply justify-start;
+}
+
+.auto-ui-justify--center {
+	@apply justify-center;
+}
+
+.auto-ui-justify--end {
+	@apply justify-end;
+}

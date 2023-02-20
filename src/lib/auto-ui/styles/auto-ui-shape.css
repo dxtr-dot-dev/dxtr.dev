@@ -1,0 +1,10 @@
+.auto-ui-shape--squared {
+}
+
+.auto-ui-shape--rounded {
+	@apply rounded;
+}
+
+.auto-ui-shape--rounded-full {
+	@apply rounded-full;
+}

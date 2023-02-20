@@ -33,8 +33,8 @@
 						color={item.value === value ? 'primary' : 'paper'}
 						hoverColor="primary"
 						hoverEffect={item.value === value ? 'none' : 'inner-shadow'}
-						fullWidth
-						transform="capitalize"
+						width="full"
+						textTransform="capitalize"
 						justify="left"
 						on:click={() => (value = item.value)}
 					>
