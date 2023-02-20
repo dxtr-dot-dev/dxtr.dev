@@ -1,6 +1,7 @@
 <script lang="ts">
 	import '@fontsource/courier-prime';
 	import '@fontsource/fira-mono';
+	import 'bootstrap-icons/font/bootstrap-icons.css';
 
 	import { page } from '$app/stores';
 	import ThemeDropdownContainer from '$lib/containers/theme-dropdown-container.svelte';
@@ -23,30 +24,30 @@
 	</script>
 </svelte:head>
 
-<div class="flex-col h-full">
-	<header class="p-4">
-		<h1 class="font-heading text-primary text-center text-2xl">DXTR.DEV</h1>
+<div class="flex-col h-full max-w-screen-lg mx-auto">
+	<header class="flex py-4 px-2">
+		<a href="/">
+			<h1 class="font-heading text-primary text-center text-2xl">DXTR.DEV</h1>
+		</a>
+
+		<div class="flex-1" />
+
+		<nav>
+			<ul class="gap-4 flex items-center">
+				<li aria-current={$page.url.pathname === '/casex' ? 'page' : undefined}>
+					<ButtonOrLink href="/casex" color="body">Casex</ButtonOrLink>
+				</li>
+
+				<li aria-current={$page.url.pathname === '/casex-template' ? 'page' : undefined}>
+					<ButtonOrLink href="/casex-template" color="body">Casex Template</ButtonOrLink>
+				</li>
+
+				<li>
+					<ThemeDropdownContainer />
+				</li>
+			</ul>
+		</nav>
 	</header>
-
-	<nav>
-		<ul class="gap-4 flex justify-center">
-			<li aria-current={$page.url.pathname === '/casex' ? 'page' : undefined}>
-				<ButtonOrLink href="/casex" variant="text" color="body" hoverColor="secondary"
-					>Casex</ButtonOrLink
-				>
-			</li>
-
-			<li aria-current={$page.url.pathname === '/casex-template' ? 'page' : undefined}>
-				<ButtonOrLink href="/casex-template" variant="text" color="body" hoverColor="tertiary"
-					>Casex Template</ButtonOrLink
-				>
-			</li>
-
-			<li>
-				<ThemeDropdownContainer />
-			</li>
-		</ul>
-	</nav>
 
 	<main class="p-4">
 		<slot />

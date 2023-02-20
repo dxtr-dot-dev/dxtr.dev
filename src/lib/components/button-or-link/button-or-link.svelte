@@ -1,18 +1,15 @@
 <script lang="ts">
-	import type { UIColor, UIEffect, UIShape, UITextTransform, UIVariant } from '$lib/types/UI';
+	import type {
+		UIColor,
+		UIEffect,
+		UIShape,
+		UISize,
+		UITextAlign,
+		UITextTransform,
+		UIVariant
+	} from '$lib/types/UI';
 	import type { AriaRole } from '$lib/types/AriaRole';
 	import { c } from '$lib/utils/c';
-
-	export let variant: UIVariant = 'filled';
-	export let shape: UIShape = 'rounded';
-	export let fullWidth: boolean = false;
-	export let textTransform: UITextTransform = 'none';
-
-	export let color: UIColor = 'primary';
-	export let hoverColor: UIColor | undefined = undefined;
-
-	export let hoverEffect: UIEffect | undefined = undefined;
-	$: hoverEffectWithFallback = hoverEffect || variant === 'text' ? 'text-color' : 'outer-shadow';
 
 	// button
 	export let type: 'reset' | 'button' | 'submit' = 'submit';
@@ -20,6 +17,36 @@
 	// link
 	export let href: string | undefined = undefined;
 	export let target: '_self' | '_blank' = '_self';
+
+	// UI
+	export let size: UISize = 'md';
+	export let variant: UIVariant = href ? 'text' : 'fill';
+	export let shape: UIShape = 'rounded';
+	export let textTransform: UITextTransform = 'none';
+	export let textAlign: UITextAlign = 'center';
+	export let fullWidth: boolean = false;
+
+	export let color: UIColor = 'primary';
+	export let hoverColor: UIColor | 'none' | undefined = undefined;
+	$: hoverColorWithFallback = (() => {
+		if (hoverColor) return hoverColor;
+
+		if (variant === 'text') return 'none';
+
+		return `${color}-text`;
+	})();
+
+	export let hoverEffect: UIEffect | undefined = undefined;
+	$: hoverEffectWithFallback = (() => {
+		if (hoverEffect) return hoverEffect;
+
+		switch (variant) {
+			case 'text':
+				return 'text-color';
+			default:
+				return 'outer-shadow';
+		}
+	})();
 
 	// storybook
 	export let storybookSlot: string | undefined = undefined;
@@ -30,6 +57,7 @@
 
 	$: props = {
 		class: c([
+			`size--${size}`,
 			`variant--${variant}`,
 			`shape--${shape}`,
 			`hover-effect--${hoverEffectWithFallback}`,
@@ -40,7 +68,7 @@
 		style: c([
 			`--button-color: var(--color-${color});`,
 			`--button-color-text: var(--color-${color}-text);`,
-			`--button-hover-color: var(--color-${hoverColor || `${color}-text`});`
+			`--button-hover-color: var(--color-${hoverColorWithFallback});`
 		]),
 
 		// Acessibility
@@ -62,24 +90,56 @@
 <style lang="postcss">
 	button,
 	a {
-		@apply px-2 py-1;
 		color: rgb(var(--button-color-text));
-		transition: 0.3s all ease;
+		transition: 0.2s all ease;
+		display: inline-flex;
+		align-items: center;
+		@apply gap-2;
+	}
+
+	/* size */
+
+	.size--xs {
+		@apply text-xs;
+		@apply px-1.5 py-0.5;
+	}
+
+	.size--sm {
+		@apply text-sm;
+		@apply px-2 py-1;
+	}
+
+	.size--md {
+		@apply px-3 py-1.5;
+	}
+
+	.size--lg {
+		@apply px-5 py-2.5;
+		@apply text-lg;
+	}
+
+	.size--xl {
+		@apply px-6 py-3;
+		@apply text-xl;
 	}
 
 	/* variant */
 
-	.variant--filled {
+	.variant--fill {
 		background: rgb(var(--button-color));
 	}
 
-	.variant--outlined {
+	.variant--outline {
 		border: 1px solid rgb(var(--button-color));
 		color: rgb(var(--button-color));
 	}
 
 	.variant--text {
 		color: rgb(var(--button-color));
+	}
+
+	.variant--text:hover {
+		text-decoration: underline;
 	}
 
 	/* shape */
@@ -125,6 +185,19 @@
 
 	.text-transform--lowercase {
 		@apply lowercase;
+	}
+
+	/* text align */
+	.text-align--left {
+		@apply justify-start;
+	}
+
+	.text-align--center {
+		@apply justify-center;
+	}
+
+	.text-align--right {
+		@apply justify-end;
 	}
 
 	/* width */

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { onDestroy, onMount } from 'svelte';
 	import { browser } from '$app/environment';
 	import ThemeDropdown from '$lib/components/theme-dropdown/theme-dropdown.svelte';
 
@@ -18,12 +19,6 @@
 		: undefined;
 
 	$: {
-		darkModePreference?.addEventListener('change', () => {
-			prefersDarkMode = darkModePreference.matches;
-		});
-	}
-
-	$: {
 		if (browser) {
 			localStorage.theme = themeSelection;
 
@@ -34,6 +29,18 @@
 			}
 		}
 	}
+
+	function darkModePreferenceChange() {
+		prefersDarkMode = darkModePreference?.matches;
+	}
+
+	onMount(() => {
+		darkModePreference?.addEventListener('change', darkModePreferenceChange);
+	});
+
+	onDestroy(() => {
+		darkModePreference?.removeEventListener('change', darkModePreferenceChange);
+	});
 </script>
 
 <ThemeDropdown bind:value={themeSelection} />

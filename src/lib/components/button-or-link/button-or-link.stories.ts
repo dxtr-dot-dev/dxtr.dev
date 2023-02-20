@@ -47,10 +47,6 @@ export const ColorError: Story = {
 	args: { color: 'error' }
 };
 
-export const ColorTransparent: Story = {
-	args: { color: 'transparent' }
-};
-
 export const ColorBody: Story = {
 	args: { color: 'body' }
 };
@@ -62,17 +58,43 @@ export const ColorPaperHoverInnerShadowPrimary: Story = {
 };
 
 export const HoverEffectNone: Story = {
-	args: { hoverEffect: false }
+	args: { hoverEffect: 'none' }
+};
+
+// size
+
+export const SizeXs: Story = {
+	args: { size: 'xs' }
+};
+
+export const SizeSm: Story = {
+	args: { size: 'sm' }
+};
+
+export const SizeMd: Story = {
+	args: { size: 'md' }
+};
+
+export const SizeLg: Story = {
+	args: { size: 'lg' }
+};
+
+export const SizeXl: Story = {
+	args: { size: 'xl' }
 };
 
 // variant
 
-export const VariantFilled: Story = {
-	args: { variant: 'filled' }
+export const VariantFill: Story = {
+	args: { variant: 'fill' }
 };
 
-export const VariantOutlined: Story = {
-	args: { variant: 'outlined' }
+export const VariantOutline: Story = {
+	args: { variant: 'outline' }
+};
+
+export const VariantText: Story = {
+	args: { variant: 'text' }
 };
 
 // shape
