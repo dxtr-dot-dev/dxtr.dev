@@ -62,6 +62,7 @@
 			`shape--${shape}`,
 			`hover-effect--${hoverEffectWithFallback}`,
 			`text-transform--${textTransform}`,
+			`text-align--${textAlign}`,
 			fullWidth && 'full-width'
 		]),
 
