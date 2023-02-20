@@ -6,9 +6,9 @@
 	import { page } from '$app/stores';
 	import ButtonOrLink from '$lib/components/button-or-link/button-or-link.svelte';
 
+	import '../app.css';
 	import '$lib/auto-ui/styles/auto-ui.css';
 	import ThemeSwitcherContainer from '$lib/containers/theme-switcher-container.svelte';
-	import '../app.css';
 </script>
 
 <svelte:head>
@@ -26,7 +26,7 @@
 	</script>
 </svelte:head>
 
-<div class="flex-col h-full max-w-screen-lg mx-auto">
+<div class="flex flex-col h-full max-w-screen-lg mx-auto">
 	<header class="flex flex-col md:flex-row items-center py-4 px-2">
 		<a href="/" class="h-6 overflow-hidden">
 			<h1 class="font-heading text-primary text-center text-2xl">DXTR.DEV</h1>
@@ -51,7 +51,7 @@
 		</nav>
 	</header>
 
-	<main class="px-2">
+	<main class="px-2 flex flex-col flex-1 overflow-auto">
 		<slot />
 	</main>
 </div>

@@ -11,7 +11,7 @@
 		--color-primary: 20, 66, 250; /* yellow.400 complementary #1442FA */
 		--color-primary-text: var(--color-body-contrast);
 
-		--color-secondary: 89, 20, 250, 1; /* analogous 1: #5914FA */
+		--color-secondary: 89, 20, 250; /* analogous 1: #5914FA */
 		--color-secondary-text: var(--color-body-contrast);
 
 		--color-tertiary: 20, 181, 250; /* analogous 2: #14B5FA */

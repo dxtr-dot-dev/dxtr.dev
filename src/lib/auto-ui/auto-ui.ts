@@ -40,23 +40,9 @@ export function autoUI({
 	variant,
 	width
 }: AutoUIArgs) {
-	const hoverEffectWithFallback = (() => {
-		if (hoverEffect || !variant) return hoverEffect;
-		if (variant === 'text') return 'text-color';
-		return 'outer-shadow';
-	})();
-
-	const hoverColorWithFallback = (() => {
-		if (hoverColor || !hoverEffect) return hoverColor;
-
-		if (variant === 'text') return 'none';
-
-		return `${color}-text`;
-	})();
-
 	const classes = [
 		display && `aui-display--${display}`,
-		hoverEffectWithFallback && `aui-hover-effect--${hoverEffectWithFallback}`,
+		hoverEffect && `aui-hover-effect--${hoverEffect}`,
 		justify && `aui-justify--${justify}`,
 		shape && `aui-shape--${shape}`,
 		size && `aui-size--${size}`,
@@ -70,7 +56,7 @@ export function autoUI({
 	const styles = [
 		color && `--aui-color: var(--color-${color});`,
 		color && `--aui-color-text: var(--color-${color}-text);`,
-		hoverColorWithFallback && `--aui-hover-color: var(--color-${hoverColorWithFallback});`
+		hoverColor && `--aui-hover-color: var(--color-${hoverColor});`
 	];
 
 	return {

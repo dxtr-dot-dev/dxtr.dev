@@ -33,11 +33,25 @@
 	export let transition: AutoUITransition = 'regular';
 	export let width: AutoUIWidth = 'auto';
 
+	$: hoverEffectWithFallback = (() => {
+		if (hoverEffect) return hoverEffect;
+		if (variant === 'text') return 'text-color';
+		return 'outer-shadow';
+	})();
+
+	$: hoverColorWithFallback = (() => {
+		if (hoverColor || !hoverEffect) return hoverColor;
+
+		if (variant === 'text') return 'none';
+
+		return `${color}-text`;
+	})();
+
 	$: auto = autoUI({
 		color,
 		display,
-		hoverEffect,
-		hoverColor,
+		hoverEffect: hoverEffectWithFallback,
+		hoverColor: hoverColorWithFallback,
 		justify,
 		shape,
 		size,
