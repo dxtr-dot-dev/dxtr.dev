@@ -4,31 +4,67 @@
 
 @layer base {
 	:root:not(.dark) {
-		--color-primary: 20, 66, 250; /* yellow.400 complementary #1442FA */
-		--color-secondary: 89, 20, 250, 1; /* analogous 1: #5914FA */
-		--color-tertiary: 20, 181, 250; /* analogous 2: #14B5FA */
-		--color-background: 243, 244, 246; /* gray.100 */
-		--color-paper: 209, 213, 239; /* gray.300 */
 		--color-body: 0, 0, 0; /* black */
 		--color-body-contrast: 255, 255, 255; /* white */
+
+		--color-primary: 20, 66, 250; /* yellow.400 complementary #1442FA */
+		--color-primary-text: var(--color-body-contrast);
+
+		--color-secondary: 89, 20, 250, 1; /* analogous 1: #5914FA */
+		--color-secondary-text: var(--color-body-contrast);
+
+		--color-tertiary: 20, 181, 250; /* analogous 2: #14B5FA */
+		--color-tertiary-text: var(--color-body-contrast);
+
+		--color-paper: 209, 213, 239; /* gray.300 */
+		--color-paper-text: var(--color-body);
+
 		--color-success: 22, 163, 74; /* green.600 */
+		--color-success-text: var(--color-body-contrast);
+
 		--color-info: 99, 102, 241; /* indigo.500 */
+		--color-info-text: var(--color-body-contrast);
+
 		--color-warn: 251, 191, 36; /* amber.400 */
+		--color-warn-text: var(--color-body-contrast);
+
 		--color-error: 220, 38, 38; /* red.600 */
+		--color-error-text: var(--color-body-contrast);
+
+		--color-background: 243, 244, 246; /* gray.100 */
+		--color-background-text: var(--color-body);
 	}
 
 	:root.dark {
-		--color-primary: 250, 204, 21; /* yellow.400 */
-		--color-secondary: 181, 250, 20; /* analogous 1: #B5FA14 */
-		--color-tertiary: 250, 89, 20; /* analogous 2: #FA5914 */
-		--color-background: 0, 0, 0; /* black */
-		--color-paper: 39, 39, 42; /* zinc.800 */
 		--color-body: 254, 252, 232; /* yellow.50 */
 		--color-body-contrast: 0, 0, 0; /* black */
+
+		--color-primary: 250, 204, 21; /* yellow.400 */
+		--color-primary-text: var(--color-body-contrast);
+
+		--color-secondary: 181, 250, 20; /* analogous 1: #B5FA14 */
+		--color-secondary-text: var(--color-body-contrast);
+
+		--color-tertiary: 250, 89, 20; /* analogous 2: #FA5914 */
+		--color-tertiary-text: var(--color-body-contrast);
+
+		--color-paper: 39, 39, 42; /* zinc.800 */
+		--color-paper-text: var(--color-body);
+
 		--color-success: 22, 163, 74; /* green.600 */
+		--color-success-text: var(--color-body-contrast);
+
 		--color-info: 99, 102, 241; /* indigo.500 */
+		--color-info-text: var(--color-body-contrast);
+
 		--color-warn: 251, 191, 36; /* amber.400 */
+		--color-warn-text: var(--color-body-contrast);
+
 		--color-error: 220, 38, 38; /* red.600 */
+		--color-error-text: var(--color-body-contrast);
+
+		--color-background: 0, 0, 0; /* black */
+		--color-background-text: var(--color-body-contrast);
 	}
 
 	@font-face {

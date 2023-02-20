@@ -10,6 +10,8 @@ export type UIColor =
 	| 'transparent'
 	| 'body';
 
+export type UIEffect = 'inset-shadow' | 'outer-shadow';
+
 export type UIVariant = 'filled' | 'outlined';
 
 export type UIShape = 'squared' | 'rounded' | 'rounded-full';

@@ -1,9 +1,12 @@
 <script lang="ts">
-	import type { UIColor, UIShape, UITextTransform, UIVariant } from '$lib/types/UI';
+	import type { UIColor, UIEffect, UIShape, UITextTransform, UIVariant } from '$lib/types/UI';
 	import type { AriaRole } from '$lib/types/AriaRole';
+	import { c } from '$lib/utils/c';
 
 	export let color: UIColor = 'primary';
-	export let hoverColor: UIColor = 'body';
+	export let hoverColor: UIColor | undefined = undefined;
+	export let hoverEffect: UIEffect | undefined = 'outer-shadow';
+
 	export let variant: UIVariant = 'filled';
 	export let shape: UIShape = 'rounded';
 	export let fullWidth: boolean = false;
@@ -25,19 +28,24 @@
 	export let role: AriaRole | undefined = undefined;
 
 	$: props = {
-		class: [
+		class: c([
 			variant,
-			shape !== 'squared' && shape,
-			`color-${color}`,
-			fullWidth && 'w-full',
 			textTransform,
-			noHoverEffect && 'no-hover'
-		]
-			.filter(Boolean)
-			.join(' '),
+			shape,
+			fullWidth && 'w-full',
+			noHoverEffect && 'no-hover',
+			`hover-effect--${hoverEffect}`
+		]),
+
+		style: c([
+			`--button-color: var(--color-${color});`,
+			`--button-color-text: var(--color-${color}-text);`,
+			`--button-hover-color: var(--color-${hoverColor || `${color}-text`});`
+		]),
+
+		// Acessibility
 		'aria-label': ariaLabel,
-		role: role,
-		style: `--button-color: var(--color-${color}); --button-hover-color: var(--color-${hoverColor});`
+		role: role
 	};
 </script>
 
@@ -55,28 +63,24 @@
 	button,
 	a {
 		@apply px-2 py-1;
+		color: rgb(var(--button-color-text));
 		transition: 0.3s all ease;
-	}
-
-	.shape-rounded {
-		@apply rounded;
-	}
-
-	.shape-rounded-full {
-		@apply rounded-full;
 	}
 
 	.filled {
 		background: rgb(var(--button-color));
+	}
+
+	.hover-effect--inset-shadow {
 		box-shadow: inset 1000px 1000px transparent;
 	}
 
-	.filled:not(.color-paper) {
-		@apply text-body-contrast;
+	.hover-effect--inset-shadow:hover {
+		box-shadow: inset 1000px 1000px rgba(var(--button-hover-color), 0.25);
 	}
 
-	.filled:not(.no-hover):hover {
-		box-shadow: inset 1000px 1000px rgba(var(--button-hover-color), 0.25);
+	.hover-effect--outer-shadow:hover {
+		@apply shadow-lg;
 	}
 
 	.outlined {

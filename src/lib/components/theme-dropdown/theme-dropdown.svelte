@@ -21,6 +21,7 @@
 				<ButtonOrLink
 					color={themeValue === value ? 'primary' : 'paper'}
 					hoverColor="primary"
+					hoverEffect="inset-shadow"
 					fullWidth
 					shape="squared"
 					textTransform="capitalize"
