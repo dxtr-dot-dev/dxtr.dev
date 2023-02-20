@@ -1,0 +1,11 @@
+.aui-justify--start {
+	@apply justify-start;
+}
+
+.aui-justify--center {
+	@apply justify-center;
+}
+
+.aui-justify--end {
+	@apply justify-end;
+}

@@ -1,0 +1,11 @@
+.aui-text-transform--capitalize {
+	@apply capitalize;
+}
+
+.aui-text-transform--uppercase {
+	@apply uppercase;
+}
+
+.aui-text-transform--lowercase {
+	@apply lowercase;
+}

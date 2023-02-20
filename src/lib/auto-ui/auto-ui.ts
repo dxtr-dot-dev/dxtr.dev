@@ -9,7 +9,7 @@ import type {
 	AutoUITransition,
 	AutoUIVariant,
 	AutoUIWidth
-} from './auto-ui-types';
+} from './aui-types';
 
 type AutoUIArgs = {
 	color?: AutoUIColor;
@@ -53,21 +53,21 @@ export function autoUI({
 	})();
 
 	const classes = [
-		`auto-ui-display--${display}`,
-		`auto-ui-hover-effect--${hoverEffectWithFallback}`,
-		`auto-ui-justify--${justify}`,
-		`auto-ui-shape--${shape}`,
-		`auto-ui-size--${size}`,
-		`auto-ui-text-transform--${textTransform}`,
-		`auto-ui-transition--${transition}`,
-		`auto-ui-variant--${variant}`,
-		`auto-ui-width--${width}`
+		`aui-display--${display}`,
+		`aui-hover-effect--${hoverEffectWithFallback}`,
+		`aui-justify--${justify}`,
+		`aui-shape--${shape}`,
+		`aui-size--${size}`,
+		`aui-text-transform--${textTransform}`,
+		`aui-transition--${transition}`,
+		`aui-variant--${variant}`,
+		`aui-width--${width}`
 	];
 
 	const styles = [
-		`--auto-ui-color: var(--color-${color});`,
-		`--auto-ui-color-text: var(--color-${color}-text);`,
-		`--auto-ui-hover-color: var(--color-${hoverColorWithFallback});`
+		`--aui-color: var(--color-${color});`,
+		`--aui-color-text: var(--color-${color}-text);`,
+		`--aui-hover-color: var(--color-${hoverColorWithFallback});`
 	];
 
 	return {

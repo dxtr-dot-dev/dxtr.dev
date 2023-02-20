@@ -1,0 +1,7 @@
+.aui-display--flex {
+	@apply flex;
+}
+
+.aui-display--inline-flex {
+	@apply inline-flex;
+}

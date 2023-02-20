@@ -1,0 +1,10 @@
+.aui-shape--squared {
+}
+
+.aui-shape--rounded {
+	@apply rounded;
+}
+
+.aui-shape--rounded-full {
+	@apply rounded-full;
+}
