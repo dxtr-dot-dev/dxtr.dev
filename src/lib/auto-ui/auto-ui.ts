@@ -9,16 +9,17 @@ import type {
 	AutoUITransition,
 	AutoUIVariant,
 	AutoUIWidth
-} from './aui-types';
+} from './auto-ui-types';
 
 type AutoUIArgs = {
 	color?: AutoUIColor;
 	display?: AutoUIDisplay;
 	hoverEffect?: AutoUIHoverEffect;
 	hoverColor?: AutoUIColor;
-	justify: AutoUIJustify;
+	justify?: AutoUIJustify;
 	shape?: AutoUIShape;
 	size?: AutoUISize;
+	gap?: AutoUISize;
 	textTransform?: AutoUITextTransform;
 	transition?: AutoUITransition;
 	variant?: AutoUIVariant;
@@ -26,26 +27,27 @@ type AutoUIArgs = {
 };
 
 export function autoUI({
-	color = 'primary',
-	display = 'inline-flex',
+	color,
+	display,
 	hoverEffect,
 	hoverColor,
-	justify = 'left',
-	shape = 'rounded',
-	size = 'md',
-	textTransform = 'none',
+	justify,
+	shape,
+	size,
+	gap,
+	textTransform,
 	transition,
-	variant = 'fill',
-	width = 'auto'
+	variant,
+	width
 }: AutoUIArgs) {
 	const hoverEffectWithFallback = (() => {
-		if (hoverEffect) return hoverEffect;
+		if (hoverEffect || !variant) return hoverEffect;
 		if (variant === 'text') return 'text-color';
 		return 'outer-shadow';
 	})();
 
 	const hoverColorWithFallback = (() => {
-		if (hoverColor) return hoverColor;
+		if (hoverColor || !hoverEffect) return hoverColor;
 
 		if (variant === 'text') return 'none';
 
@@ -53,21 +55,22 @@ export function autoUI({
 	})();
 
 	const classes = [
-		`aui-display--${display}`,
-		`aui-hover-effect--${hoverEffectWithFallback}`,
-		`aui-justify--${justify}`,
-		`aui-shape--${shape}`,
-		`aui-size--${size}`,
-		`aui-text-transform--${textTransform}`,
-		`aui-transition--${transition}`,
-		`aui-variant--${variant}`,
-		`aui-width--${width}`
+		display && `aui-display--${display}`,
+		hoverEffectWithFallback && `aui-hover-effect--${hoverEffectWithFallback}`,
+		justify && `aui-justify--${justify}`,
+		shape && `aui-shape--${shape}`,
+		size && `aui-size--${size}`,
+		gap && `aui-gap--${gap}`,
+		textTransform && `aui-text-transform--${textTransform}`,
+		transition && `aui-transition--${transition}`,
+		variant && `aui-variant--${variant}`,
+		width && `aui-width--${width}`
 	];
 
 	const styles = [
-		`--aui-color: var(--color-${color});`,
-		`--aui-color-text: var(--color-${color}-text);`,
-		`--aui-hover-color: var(--color-${hoverColorWithFallback});`
+		color && `--aui-color: var(--color-${color});`,
+		color && `--aui-color-text: var(--color-${color}-text);`,
+		hoverColorWithFallback && `--aui-hover-color: var(--color-${hoverColorWithFallback});`
 	];
 
 	return {

@@ -42,6 +42,7 @@
 		justify,
 		shape,
 		size,
+		gap: size,
 		textTransform,
 		transition,
 		variant,
@@ -54,6 +55,8 @@
 	// acessibility
 	export let ariaLabel: string | undefined = undefined;
 	export let role: AriaRole | undefined = undefined;
+	export let ariaDescribedBy: string | undefined = undefined;
+	export let ariaSelected: boolean | undefined = undefined;
 </script>
 
 {#if href}
@@ -61,7 +64,15 @@
 		<slot>{storybookSlot}</slot>
 	</a>
 {:else}
-	<button {type} on:click {...auto} aria-label={ariaLabel} {role}>
+	<button
+		{type}
+		on:click
+		{role}
+		aria-label={ariaLabel}
+		aria-describedby={ariaDescribedBy}
+		aria-selected={ariaSelected}
+		{...auto}
+	>
 		<slot>{storybookSlot}</slot>
 	</button>
 {/if}

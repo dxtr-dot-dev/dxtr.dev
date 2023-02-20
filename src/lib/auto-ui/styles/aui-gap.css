@@ -1,0 +1,19 @@
+.aui-gap--xs {
+	@apply gap-0.5;
+}
+
+.aui-gap--sm {
+	@apply gap-1;
+}
+
+.aui-gap--md {
+	@apply gap-2;
+}
+
+.aui-gap--lg {
+	@apply gap-3;
+}
+
+.aui-gap--xl {
+	@apply gap-4;
+}

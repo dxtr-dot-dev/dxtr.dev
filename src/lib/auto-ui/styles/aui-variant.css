@@ -1,13 +1,17 @@
 .aui-variant--fill {
 	background: rgb(var(--aui-color));
 	color: rgb(var(--aui-color-text));
+	border: none;
 }
 
 .aui-variant--outline {
+	background: none;
 	border: 1px solid rgb(var(--aui-color));
 	color: rgb(var(--aui-color));
 }
 
 .aui-variant--text {
+	background: none;
+	border: none;
 	color: rgb(var(--aui-color));
 }

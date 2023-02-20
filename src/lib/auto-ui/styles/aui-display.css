@@ -2,6 +2,10 @@
 	@apply flex;
 }
 
+.aui-display--flex-col {
+	@apply flex flex-col;
+}
+
 .aui-display--inline-flex {
 	@apply inline-flex;
 }

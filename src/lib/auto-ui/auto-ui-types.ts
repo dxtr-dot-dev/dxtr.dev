@@ -9,7 +9,7 @@ export type AutoUIColor =
 	| 'error'
 	| 'body';
 
-export type AutoUIDisplay = 'flex' | 'inline-flex';
+export type AutoUIDisplay = 'flex' | 'flex-col' | 'inline-flex';
 
 export type AutoUIHoverEffect = 'inner-shadow' | 'outer-shadow' | 'text-color' | 'none';
 
@@ -17,7 +17,7 @@ export type AutoUIJustify = 'left' | 'center' | 'right';
 
 export type AutoUIShape = 'squared' | 'rounded' | 'rounded-full';
 
-export type AutoUISize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+export type AutoUISize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'none';
 
 export type AutoUITransition = 'very-slow' | 'slow' | 'regular' | 'fast' | 'very-fast';
 
