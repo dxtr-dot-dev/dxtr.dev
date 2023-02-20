@@ -2,6 +2,7 @@ import '@fontsource/courier-prime';
 import '@fontsource/fira-mono';
 
 import '../src/app.css';
+import '$lib/auto-ui/styles/auto-ui.css';
 
 export const parameters = {
 	backgrounds: {
