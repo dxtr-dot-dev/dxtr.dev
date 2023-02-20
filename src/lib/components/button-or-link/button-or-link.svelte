@@ -12,7 +12,6 @@
 		AutoUIWidth,
 		AutoUITransition
 	} from '$lib/auto-ui/auto-ui-types';
-	import type { AriaRole } from '$lib/types/AriaRole';
 
 	// button
 	export let type: 'reset' | 'button' | 'submit' = 'submit';
@@ -53,26 +52,15 @@
 	export let storybookSlot: string | undefined = undefined;
 
 	// acessibility
-	export let ariaLabel: string | undefined = undefined;
-	export let role: AriaRole | undefined = undefined;
 	export let ariaDescribedBy: string | undefined = undefined;
-	export let ariaSelected: boolean | undefined = undefined;
 </script>
 
 {#if href}
-	<a {href} {target} {...auto}>
+	<a {href} {target} class={auto.class} style={auto.style}>
 		<slot>{storybookSlot}</slot>
 	</a>
 {:else}
-	<button
-		{type}
-		on:click
-		{role}
-		aria-label={ariaLabel}
-		aria-describedby={ariaDescribedBy}
-		aria-selected={ariaSelected}
-		{...auto}
-	>
+	<button {type} on:click class={auto.class} style={auto.style} aria-describedby={ariaDescribedBy}>
 		<slot>{storybookSlot}</slot>
 	</button>
 {/if}

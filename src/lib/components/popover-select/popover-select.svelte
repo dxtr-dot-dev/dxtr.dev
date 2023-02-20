@@ -32,6 +32,20 @@
 	export let transition: AutoUITransition = 'regular';
 	export let width: AutoUIWidth = 'auto';
 
+	$: auto = autoUI({
+		display: 'flex',
+		hoverEffect: 'inner-shadow',
+		hoverColor,
+		justify: 'left',
+		shape,
+		size,
+		gap: size,
+		textTransform,
+		transition,
+		variant,
+		width: 'full'
+	});
+
 	$: ulAuto = autoUI({ display: 'flex-col', gap: size });
 </script>
 
@@ -39,19 +53,12 @@
 	<ul class={`p-2 ${ulAuto.class}`} style={ulAuto.style}>
 		{#each options as option}
 			<li>
-				<ButtonOrLink
+				<button
+					class={auto.class}
+					style={autoUI({ color: option.value === value ? selectedColor : color }).style}
 					role="option"
-					ariaSelected={option.value === value}
+					aria-selected={option.value === value}
 					color={option.value === value ? selectedColor : color}
-					hoverEffect="inner-shadow"
-					{hoverColor}
-					justify="left"
-					{shape}
-					{size}
-					{textTransform}
-					{transition}
-					{variant}
-					width="full"
 					on:click={() => (value = option.value)}
 				>
 					{#if option.icon}
@@ -59,7 +66,7 @@
 					{/if}
 
 					{option.label}
-				</ButtonOrLink>
+				</button>
 			</li>{/each}
 	</ul>
 </Popover>
