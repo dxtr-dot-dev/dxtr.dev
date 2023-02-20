@@ -1,6 +1,5 @@
 import '@fontsource/courier-prime';
 import '@fontsource/fira-mono';
-import LayoutDecorator from './layout-decorator.svelte';
 
 import '../src/app.css';
 
@@ -17,5 +16,3 @@ export const parameters = {
 	},
 	layout: 'fullscreen'
 };
-
-export const decorators = [() => LayoutDecorator];

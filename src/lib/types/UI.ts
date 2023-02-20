@@ -10,7 +10,7 @@ export type UIColor =
 	| 'transparent'
 	| 'body';
 
-export type UIEffect = 'inset-shadow' | 'outer-shadow';
+export type UIEffect = 'inner-shadow' | 'outer-shadow';
 
 export type UIVariant = 'filled' | 'outlined';
 

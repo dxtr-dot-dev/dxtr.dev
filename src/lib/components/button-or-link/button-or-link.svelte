@@ -5,13 +5,12 @@
 
 	export let color: UIColor = 'primary';
 	export let hoverColor: UIColor | undefined = undefined;
-	export let hoverEffect: UIEffect | undefined = 'outer-shadow';
+	export let hoverEffect: UIEffect | false = 'outer-shadow';
 
 	export let variant: UIVariant = 'filled';
 	export let shape: UIShape = 'rounded';
 	export let fullWidth: boolean = false;
 	export let textTransform: UITextTransform | undefined = undefined;
-	export let noHoverEffect: boolean = false;
 
 	// button
 	export let type: 'reset' | 'button' | 'submit' = 'submit';
@@ -29,12 +28,11 @@
 
 	$: props = {
 		class: c([
-			variant,
-			textTransform,
-			shape,
-			fullWidth && 'w-full',
-			noHoverEffect && 'no-hover',
-			`hover-effect--${hoverEffect}`
+			`variant--${variant}`,
+			`text-transform--${textTransform}`,
+			`shape--${shape}`,
+			`hover-effect--${hoverEffect || 'none'}`,
+			fullWidth && 'full-width'
 		]),
 
 		style: c([
@@ -67,15 +65,37 @@
 		transition: 0.3s all ease;
 	}
 
-	.filled {
+	/* Variant */
+
+	.variant--filled {
 		background: rgb(var(--button-color));
 	}
 
-	.hover-effect--inset-shadow {
+	.variant--outlined {
+		border: 1px solid rgb(var(--button-color));
+		color: rgb(var(--button-color));
+	}
+
+	/* Shape */
+
+	.shape--squared {
+	}
+
+	.shape--rounded {
+		@apply rounded;
+	}
+
+	.shape--rounded-full {
+		@apply rounded-full;
+	}
+
+	/* Hover effect */
+
+	.hover-effect--inner-shadow {
 		box-shadow: inset 1000px 1000px transparent;
 	}
 
-	.hover-effect--inset-shadow:hover {
+	.hover-effect--inner-shadow:hover {
 		box-shadow: inset 1000px 1000px rgba(var(--button-hover-color), 0.25);
 	}
 
@@ -83,7 +103,9 @@
 		@apply shadow-lg;
 	}
 
-	.outlined {
-		border: 1px solid var(--button-color);
+	/* Width */
+
+	.full-width {
+		@apply w-full;
 	}
 </style>

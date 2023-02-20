@@ -86,4 +86,8 @@
 	#storybook-root {
 		height: theme(height.full);
 	}
+
+	#storybook-root {
+		@apply p-2;
+	}
 }
