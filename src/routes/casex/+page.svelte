@@ -28,7 +28,9 @@
 </script>
 
 <div class="flex flex-col md:flex-row gap-8 flex-1 overflow-hidden">
-	<div class="w-80">
+	<div
+		class="w-full md:w-80 order-3 md:order-1 md:border-none border-t border-t-paper py-4 md:py-0"
+	>
 		<header class="mb-4">
 			<h2 class="text-2xl font-subheading font-bold">Try it out</h2>
 		</header>
@@ -47,7 +49,7 @@
 		</div>
 	</div>
 
-	<div class="flex flex-col gap-12 overflow-auto">
+	<div class="flex flex-col gap-12 overflow-auto order-2">
 		<section>
 			<header class="mb-4">
 				<h1 class="text-3xl font-subheading text-center font-bold">Casex</h1>
