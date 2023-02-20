@@ -6,6 +6,7 @@
 	:root:not(.dark) {
 		--color-body: 0, 0, 0; /* black */
 		--color-body-contrast: 255, 255, 255; /* white */
+		--color-body-text: var(--color-body-contrast);
 
 		--color-primary: 20, 66, 250; /* yellow.400 complementary #1442FA */
 		--color-primary-text: var(--color-body-contrast);

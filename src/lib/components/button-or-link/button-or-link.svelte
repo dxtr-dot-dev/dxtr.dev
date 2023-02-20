@@ -29,9 +29,9 @@
 	$: props = {
 		class: c([
 			`variant--${variant}`,
-			`text-transform--${textTransform}`,
 			`shape--${shape}`,
 			`hover-effect--${hoverEffect || 'none'}`,
+			`text-transform--${textTransform}`,
 			fullWidth && 'full-width'
 		]),
 
@@ -65,7 +65,7 @@
 		transition: 0.3s all ease;
 	}
 
-	/* Variant */
+	/* variant */
 
 	.variant--filled {
 		background: rgb(var(--button-color));
@@ -76,7 +76,7 @@
 		color: rgb(var(--button-color));
 	}
 
-	/* Shape */
+	/* shape */
 
 	.shape--squared {
 	}
@@ -89,7 +89,7 @@
 		@apply rounded-full;
 	}
 
-	/* Hover effect */
+	/* hover effect */
 
 	.hover-effect--inner-shadow {
 		box-shadow: inset 1000px 1000px transparent;
@@ -103,7 +103,21 @@
 		@apply shadow-lg;
 	}
 
-	/* Width */
+	/* text transform */
+
+	.text-transform--capitalize {
+		@apply capitalize;
+	}
+
+	.text-transform--uppercase {
+		@apply uppercase;
+	}
+
+	.text-transform--lowercase {
+		@apply lowercase;
+	}
+
+	/* width */
 
 	.full-width {
 		@apply w-full;
