@@ -71,16 +71,16 @@
 			</header>
 
 			<div class="flex flex-col gap-2">
-				<div class="bg-paper p-2 rounded">npm install -D casex</div>
+				<div class="bg-paper p-2 rounded">npm install -D @dxtr.dev/casex</div>
 
 				<div>or</div>
 
-				<div class="bg-paper p-2 rounded inline-flex">yarn add casex</div>
+				<div class="bg-paper p-2 rounded inline-flex">yarn add @dxtr.dev/casex</div>
 
 				<div>then</div>
 
 				<div class="bg-paper p-2 rounded">
-					import {'{ casex }'} from 'casex';
+					import {'{ casex }'} from '@dxtr.dev/casex';
 				</div>
 			</div>
 		</section>
