@@ -33,7 +33,7 @@
 />
 
 <section>
-	<h1>Casex</h1>
+	<h1>CASE<span class="text-primary">X</span></h1>
 
 	<p>Casex is a function that applies a case style given a pattern.</p>
 

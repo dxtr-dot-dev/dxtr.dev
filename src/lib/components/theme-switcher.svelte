@@ -10,16 +10,9 @@
 	};
 </script>
 
-<button class="relative" on:click={toggle}>
+<button class="relative text-primary" on:click={toggle}>
 	<span class="sr-only">switch to ${nextTheme} theme</span>
 
-	<div class="rounded-full">
-		<span class="dark:hidden">
-			<i class="bi bi-sun-fill" />
-		</span>
-
-		<span class="hidden dark:inline">
-			<i class="bi bi-moon-stars-fill" />
-		</span>
-	</div>
+	<i class="dark:hidden bi bi-sun-fill" />
+	<i class="hidden dark:inline bi bi-moon-stars-fill" />
 </button>

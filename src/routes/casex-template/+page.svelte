@@ -9,7 +9,7 @@
 	image="casex-template/casex-template-cover.jpg"
 />
 
-<h1>casex template</h1>
+<h1>CASE<span class="text-primary">X</span> TEMPLATE</h1>
 
 <p>Here's a simple example of what a template might look like:</p>
 

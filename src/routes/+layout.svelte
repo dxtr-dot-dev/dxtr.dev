@@ -7,11 +7,6 @@
 
 	import '../app.css';
 	import ThemeSwitcherContainer from '$lib/containers/theme-switcher-container.svelte';
-
-	export const links = [
-		{ href: '/casex', label: 'Casex' },
-		{ href: '/casex-template', label: 'Casex Template' }
-	];
 </script>
 
 <svelte:head>
@@ -30,20 +25,27 @@
 
 <div class="border-b border-b-paper">
 	<header class="flex flex-col md:flex-row gap-2 items-center py-4 container">
-		<a href="/" class="font-heading text-primary text-xl h-5 overflow-hidden">DXTR.DEV</a>
+		<a href="/" class="font-heading text-xl h-5 overflow-hidden">
+			<span class="text-primary">DX</span>TR.DEV
+		</a>
 
 		<div class="flex-1" />
 
 		<nav>
-			<ul class="gap-4 flex items-center">
-				{#each links as link}
-					<li
-						aria-current={$page.url.pathname === link.href ? 'page' : undefined}
-						class:selected={$page.url.pathname === link.href}
-					>
-						<a href={link.href}>{link.label}</a>
-					</li>
-				{/each}
+			<ul class="gap-8 flex items-center">
+				<li
+					aria-current={$page.url.pathname === '/casex' ? 'page' : undefined}
+					class:selected={$page.url.pathname === '/casex'}
+				>
+					<a href="/casex">CASE<span class="text-primary">X</span></a>
+				</li>
+
+				<li
+					aria-current={$page.url.pathname === '/casex-template' ? 'page' : undefined}
+					class:selected={$page.url.pathname === '/casex-template'}
+				>
+					<a href="/casex-template">CASE<span class="text-primary">X</span> TEMPALTE</a>
+				</li>
 
 				<li>
 					<ThemeSwitcherContainer />
