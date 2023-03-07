@@ -17,11 +17,9 @@
 
 <svelte:head>
 	<script>
-		const useSystemTheme = !('theme' in localStorage);
-
 		if (
 			localStorage.theme === 'dark' ||
-			(useSystemTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)
+			(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
 		) {
 			document.documentElement.classList.add('dark');
 			document.querySelector('meta[name="theme-color"]').content = '#121212';

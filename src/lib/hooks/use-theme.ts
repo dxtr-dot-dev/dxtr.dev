@@ -3,23 +3,24 @@ import { writable, type Writable } from 'svelte/store';
 import { onDestroy, onMount } from 'svelte';
 import { browser } from '$app/environment';
 
-export function useTheme(): Writable<Theme> {
-	if (!browser) return writable('light');
+export function useTheme(): Writable<Theme | undefined> {
+	const $theme = writable<Theme | undefined>();
+	if (!browser) return $theme;
 
 	const localStorageTheme = localStorage.theme as Theme | undefined;
 
 	const darkModePreference = window.matchMedia('(prefers-color-scheme: dark)');
 	const getBrowserPreferredTheme = () => (darkModePreference?.matches ? 'dark' : 'light');
 
-	const $theme = writable(localStorageTheme || getBrowserPreferredTheme());
+	$theme.set(localStorageTheme || getBrowserPreferredTheme());
 
 	// Persist $theme changes to local storage
 
 	$theme.subscribe((theme) => {
-		const newTheme = theme === getBrowserPreferredTheme() ? undefined : theme;
+		const shouldStore = theme !== getBrowserPreferredTheme();
 
-		if (!theme) {
-			localStorage.theme = newTheme;
+		if (shouldStore) {
+			localStorage.theme = theme;
 		} else {
 			localStorage.removeItem('theme');
 		}
@@ -28,14 +29,8 @@ export function useTheme(): Writable<Theme> {
 	// Listen to prefered color scheme
 
 	const darkModePreferenceChange = () => $theme.set(getBrowserPreferredTheme());
-
-	onMount(() => {
-		darkModePreference?.addEventListener('change', darkModePreferenceChange);
-	});
-
-	onDestroy(() => {
-		darkModePreference?.removeEventListener('change', darkModePreferenceChange);
-	});
+	onMount(() => darkModePreference?.addEventListener('change', darkModePreferenceChange));
+	onDestroy(() => darkModePreference?.removeEventListener('change', darkModePreferenceChange));
 
 	return $theme;
 }

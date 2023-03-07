@@ -30,13 +30,13 @@
 
 	<ul>
 		<li>
-			<a href="/casex">CASE<span class="text-primary">X</span></a>: All in one, self expressive
-			pattern for string case styles
+			<a href="/casex">CASE<span class="text-primary">X</span></a>:
+			<span>All in one, self expressive pattern for string case styles</span>
 		</li>
 
 		<li>
-			<a href="/casex">CASE<span class="text-primary">X</span> Template</a>: Simple, self expressive
-			template engine for scaffolding files based on casex.
+			<a href="/casex">CASE<span class="text-primary">X</span> Template</a>:
+			<span>Simple, self expressive template engine for scaffolding files based on casex.</span>
 		</li>
 	</ul>
 </section>
