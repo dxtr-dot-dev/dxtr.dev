@@ -8,13 +8,19 @@
 		: undefined;
 
 	let prefersDarkMode = darkModePreference?.matches;
-	let themeSelection = browser ? localStorage.theme : undefined;
+	$: fallbackTheme = prefersDarkMode ? 'dark' : 'light';
 
-	$: theme = browser ? themeSelection : prefersDarkMode ? 'dark' : 'light';
+	let themeSelection = browser ? localStorage.theme : undefined;
+	$: theme = themeSelection || fallbackTheme;
 
 	$: {
 		if (browser) {
-			localStorage.theme = themeSelection;
+			const newTheme = themeSelection === fallbackTheme ? undefined : themeSelection;
+			if (newTheme) {
+				localStorage.theme = newTheme;
+			} else {
+				localStorage.removeItem('theme');
+			}
 
 			if (theme === 'dark') {
 				document.documentElement.classList.add('dark');
