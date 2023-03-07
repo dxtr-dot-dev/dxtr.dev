@@ -10,13 +10,7 @@
 	let prefersDarkMode = darkModePreference?.matches;
 	let themeSelection = browser ? localStorage.theme : undefined;
 
-	$: theme = browser
-		? themeSelection && themeSelection !== 'system'
-			? themeSelection
-			: prefersDarkMode
-			? 'dark'
-			: 'light'
-		: undefined;
+	$: theme = browser ? themeSelection : prefersDarkMode ? 'dark' : 'light';
 
 	$: {
 		if (browser) {
