@@ -1,6 +1,13 @@
 <script lang="ts">
 	import Code from '$lib/components/code.svelte';
+	import Head from '$lib/components/head.svelte';
 </script>
+
+<Head
+	title="Casex Template"
+	description="Simple, self expressive template engine for scaffolding files based on casex."
+	image="casex-template/casex-template-cover.jpg"
+/>
 
 <h1>casex template</h1>
 

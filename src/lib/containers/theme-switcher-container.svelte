@@ -15,7 +15,9 @@
 
 	$: {
 		if (browser) {
+			const themeColorMeta = document.querySelector('meta[name="theme-color"]') as HTMLMetaElement;
 			const newTheme = themeSelection === fallbackTheme ? undefined : themeSelection;
+
 			if (newTheme) {
 				localStorage.theme = newTheme;
 			} else {
@@ -24,8 +26,10 @@
 
 			if (theme === 'dark') {
 				document.documentElement.classList.add('dark');
+				themeColorMeta.content = '#121212';
 			} else {
 				document.documentElement.classList.remove('dark');
+				themeColorMeta.content = '#f3f4f6';
 			}
 		}
 	}

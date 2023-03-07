@@ -1,6 +1,7 @@
 <script lang="ts">
-	import { casex } from '@dxtr.dev/casex';
 	import Code from '$lib/components/code.svelte';
+	import Head from '$lib/components/head.svelte';
+	import { casex } from '@dxtr.dev/casex';
 
 	let text = 'My custom text';
 	let pattern = 'ca-se';
@@ -24,6 +25,12 @@
 	$: casedText =
 		pattern.length >= 4 ? casex({ text, pattern }) : 'Please provide a valid casex pattern';
 </script>
+
+<Head
+	title="Casex"
+	description="All in one, self-expressive pattern for string case styles"
+	image="casex/casex-cover.jpg"
+/>
 
 <section>
 	<h1>Casex</h1>
