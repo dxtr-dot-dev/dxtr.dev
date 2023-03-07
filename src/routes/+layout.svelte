@@ -7,6 +7,7 @@
 
 	import '../app.css';
 	import ThemeSwitcherContainer from '$lib/containers/theme-switcher-container.svelte';
+	import Logo from '$lib/components/logo.svelte';
 </script>
 
 <svelte:head>
@@ -25,8 +26,9 @@
 
 <div class="border-b border-b-paper">
 	<header class="flex flex-col md:flex-row gap-2 items-center py-4 container">
-		<a href="/" class="font-heading text-xl h-5 overflow-hidden">
-			<span class="text-primary">DX</span>TR.DEV
+		<a href="/" class="flex items-center gap-4 font-heading text-xl overflow-hidden">
+			<Logo class="h-5" />
+			<span class="h-5"><span class="text-primary">DX</span>TR.DEV</span>
 		</a>
 
 		<div class="flex-1" />

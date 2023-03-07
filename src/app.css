@@ -36,6 +36,8 @@
 
 	:root {
 		@apply font-body text-body;
+		@apply min-h-full;
+		@apply bg-gradient-to-br from-paper/50 via-transparent;
 	}
 
 	h1 {
