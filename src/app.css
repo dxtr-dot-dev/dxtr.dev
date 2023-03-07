@@ -56,6 +56,24 @@
 		@apply leading-10;
 	}
 
+	ul:not(:has(a:only-child)) {
+		@apply list-inside list-disc;
+		@apply ml-4;
+	}
+
+	ol:not(:has(a:only-child)) {
+		@apply list-inside list-decimal;
+		@apply ml-4;
+	}
+
+	li {
+		@apply leading-8;
+	}
+
+	p a {
+		@apply underline;
+	}
+
 	.container {
 		@apply max-w-screen-lg mx-auto;
 		@apply px-4;
@@ -71,6 +89,6 @@
 
 	input[type='text'] {
 		@apply py-2 px-4 rounded border border-body bg-transparent;
-		@apply inline-block w-auto;
+		@apply max-w-md;
 	}
 }
