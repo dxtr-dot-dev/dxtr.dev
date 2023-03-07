@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onDestroy, onMount } from 'svelte';
 	import { browser } from '$app/environment';
-	import ThemeSwitcher from '$lib/components/theme-switcher/theme-switcher.svelte';
+	import ThemeSwitcher from '$lib/components/theme-switcher.svelte';
 
 	const darkModePreference = browser
 		? window.matchMedia('(prefers-color-scheme: dark)')

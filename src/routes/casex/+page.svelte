@@ -1,122 +1,85 @@
 <script lang="ts">
-	import ButtonOrLink from '$lib/components/button-or-link/button-or-link.svelte';
-	import FormGroup from '$lib/components/form-group/form-group.svelte';
-	import TextInput from '$lib/components/text-input/text-input.svelte';
 	import { casex } from '@dxtr.dev/casex';
+	import { commonStringStyles, specialStyles } from './string-styles';
+	import Code from '$lib/components/code.svelte';
 
 	let text = 'My custom text';
 	let pattern = 'ca-se';
-
-	const commonStringStyles = {
-		lowercase: 'case',
-		UPPERCASE: 'CASE',
-		snake_case: 'ca_se',
-		'kebab-case': 'ca-se',
-		camelCase: 'caSe',
-		UpperCamelCase: 'CaSe',
-		'Sentence case': 'Ca se',
-		'Title Case': 'Ca Se'
-	};
-
-	const specialStyles = {
-		'Capitalize first letter': 'C* **',
-		'First letter of each word (initials)': 'C-S-'
-	};
 
 	$: casedText =
 		pattern.length >= 4 ? casex({ text, pattern }) : 'Please provide a valid casex pattern';
 </script>
 
-<div class="flex flex-col md:flex-row gap-8 flex-1 overflow-hidden">
-	<div
-		class="w-full md:w-80 order-3 md:order-1 md:border-none border-t border-t-paper py-4 md:py-0"
-	>
-		<header class="mb-4">
-			<h2 class="text-2xl font-subheading font-bold">Try it out</h2>
-		</header>
+<section>
+	<h1>Casex</h1>
 
-		<FormGroup label="Text">
-			<TextInput bind:value={text} />
-		</FormGroup>
+	<p>Casex is a function that applies a case style given a pattern.</p>
 
-		<FormGroup label="Pattern">
-			<TextInput bind:value={pattern} />
-		</FormGroup>
+	<p>
+		Instead of having a specific function for each case style, we provide a self-expressive pattern
+		that represent the desired output.
+	</p>
+</section>
+
+<section>
+	<h2>Install</h2>
+
+	<div class="flex flex-col gap-2">
+		<Code>npm install -D @dxtr.dev/casex</Code>
+
+		<p>or</p>
+
+		<Code>yarn add @dxtr.dev/casex</Code>
+
+		<p>then</p>
+
+		<Code>import {'{ casex }'} from '@dxtr.dev/casex';</Code>
+	</div>
+</section>
+
+<div class="md:grid md:grid-cols-2">
+	<section>
+		<h2>Common string styles</h2>
+
+		<ul class="list-disc ml-8">
+			{#each Object.entries(commonStringStyles) as [styleName, stylePattern]}
+				<li>
+					<button on:click={() => (pattern = stylePattern)}>{styleName}: {stylePattern}</button>
+				</li>
+			{/each}
+		</ul>
+	</section>
+
+	<section>
+		<h2>Special characters</h2>
+
+		<ul class="list-disc ml-8">
+			{#each Object.entries(specialStyles) as [styleName, stylePattern]}
+				<li>
+					<button on:click={() => (pattern = stylePattern)}>{styleName}: {stylePattern}</button>
+				</li>
+			{/each}
+		</ul>
+	</section>
+</div>
+
+<section>
+	<h2>Try it out</h2>
+
+	<div class="flex flex-col md:flex-row gap-8">
+		<div>
+			<label for="text"> Text </label>
+			<input id="text" type="text" class="w-full rounded" name="text" bind:value={text} />
+		</div>
 
 		<div>
-			Output:
-			<div>{casedText}</div>
+			<label for="pattern">Pattern</label>
+			<input id="pattern" type="text" class="w-full rounded" name="pattern" bind:value={pattern} />
 		</div>
 	</div>
 
-	<div class="flex flex-col gap-12 overflow-auto order-2">
-		<section>
-			<header class="mb-4">
-				<h1 class="text-3xl font-subheading text-center font-bold">Casex</h1>
-			</header>
-
-			<p>Casex is a function that applies a case style given a pattern.</p>
-
-			<br />
-
-			<p>
-				Instead of having a specific function for each case style, we provide a self-expressive
-				pattern that represent the desired output.
-			</p>
-		</section>
-
-		<section>
-			<header class="mb-4">
-				<h3 class="text-2xl text-center font-subheading">Install</h3>
-			</header>
-
-			<div class="flex flex-col gap-2">
-				<div class="bg-paper p-2 rounded">npm install -D @dxtr.dev/casex</div>
-
-				<div>or</div>
-
-				<div class="bg-paper p-2 rounded inline-flex">yarn add @dxtr.dev/casex</div>
-
-				<div>then</div>
-
-				<div class="bg-paper p-2 rounded">
-					import {'{ casex }'} from '@dxtr.dev/casex';
-				</div>
-			</div>
-		</section>
-
-		<section>
-			<header class="mb-3">
-				<h3 class="text-2xl text-center font-subheading">Common string styles</h3>
-			</header>
-
-			<ul>
-				{#each Object.entries(commonStringStyles) as [styleName, stylePattern]}
-					<li>
-						<ButtonOrLink on:click={() => (pattern = stylePattern)} variant="text"
-							>{styleName}: {stylePattern}</ButtonOrLink
-						>
-					</li>
-				{/each}
-			</ul>
-		</section>
-
-		<section>
-			<header class="mb-3">
-				<h3 class="text-2xl text-center font-subheading">Special characters</h3>
-			</header>
-
-			<ul>
-				{#each Object.entries(specialStyles) as [styleName, stylePattern]}
-					<li>
-						<ButtonOrLink on:click={() => (pattern = stylePattern)} variant="text"
-							>{styleName}: {stylePattern}</ButtonOrLink
-						>
-					</li>
-				{/each}
-			</ul>
-		</section>
-
-		<div class="h-4" />
+	<div>
+		<b class="text-primary text-lg">Output:</b>
+		{casedText}
 	</div>
-</div>
+</section>
