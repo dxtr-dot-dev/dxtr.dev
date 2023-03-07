@@ -1,10 +1,25 @@
 <script lang="ts">
 	import { casex } from '@dxtr.dev/casex';
-	import { commonStringStyles, specialStyles } from './string-styles';
 	import Code from '$lib/components/code.svelte';
 
 	let text = 'My custom text';
 	let pattern = 'ca-se';
+
+	const commonStringStyles = {
+		lowercase: 'case',
+		UPPERCASE: 'CASE',
+		snake_case: 'ca_se',
+		'kebab-case': 'ca-se',
+		camelCase: 'caSe',
+		UpperCamelCase: 'CaSe',
+		'Sentence case': 'Ca se',
+		'Title Case': 'Ca Se'
+	};
+
+	const specialStyles = {
+		'Capitalize first letter': 'C* **',
+		'First letter of each word (initials)': 'C-S-'
+	};
 
 	$: casedText =
 		pattern.length >= 4 ? casex({ text, pattern }) : 'Please provide a valid casex pattern';

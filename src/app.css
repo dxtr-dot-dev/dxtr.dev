@@ -7,7 +7,7 @@
 		--color-primary: 20, 66, 250; /* yellow.400 complementary #1442FA */
 		--color-background: 243, 244, 246; /* gray.100 */
 		--color-paper: 209, 213, 239; /* gray.300 */
-		--color-body: 0, 0, 0; /* black */
+		--color-body: 18, 18, 18; /* #121212 */
 		--color-success: 22, 163, 74; /* green.600 */
 		--color-info: 99, 102, 241; /* indigo.500 */
 		--color-warn: 251, 191, 36; /* amber.400 */
@@ -16,7 +16,7 @@
 
 	:root.dark {
 		--color-primary: 250, 204, 21; /* yellow.400 */
-		--color-background: 0, 0, 0; /* black */
+		--color-background: 18, 18, 18; /* #121212 */
 		--color-paper: 39, 39, 42; /* zinc.800 */
 		--color-body: 254, 252, 232; /* yellow.50 */
 		--color-success: 22, 163, 74; /* green.600 */
