@@ -5,9 +5,14 @@
 
 	import { page } from '$app/stores';
 
-	import '../app.css';
-	import ThemeSwitcherContainer from '$lib/containers/theme-switcher-container.svelte';
 	import Logo from '$lib/components/logo.svelte';
+	import ThemeSwitcher from '$lib/components/theme-switcher.svelte';
+	import { useTheme } from '$lib/hooks/use-theme';
+	import { useThemeMeta } from '$lib/hooks/use-theme-meta';
+	import '../app.css';
+
+	const theme = useTheme();
+	useThemeMeta(theme);
 </script>
 
 <svelte:head>
@@ -50,7 +55,7 @@
 				</li>
 
 				<li>
-					<ThemeSwitcherContainer />
+					<ThemeSwitcher bind:value={$theme} />
 				</li>
 			</ul>
 		</nav>
