@@ -9,5 +9,5 @@
 <svelte:head>
 	<title>{title}</title>
 	<meta name="description" content={description} />
-	<meta property="og:image" content={`${$page.url.origin}/${image}`} />
+	<meta property="og:image" content={`https://dxtr.dev/${image}`} />
 </svelte:head>
