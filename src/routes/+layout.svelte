@@ -32,7 +32,7 @@
 	<header class="flex flex-col md:flex-row gap-2 items-center py-4 container">
 		<a href="/" class="flex items-center gap-4 font-heading text-xl overflow-hidden">
 			<Logo class="h-5" />
-			<span class="h-5"><span class="text-primary">DX</span>TR.DEV</span>
+			<span><span class="text-primary">DX</span>TR.DEV</span>
 		</a>
 
 		<div class="flex-1" />
