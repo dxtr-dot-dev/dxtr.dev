@@ -167,6 +167,27 @@ export function __NaMe__Page({ _naMe_s }: __NaMe__PageProps) {
 </div>
 
 <section>
+	<h2 id="try-it-out">
+		<a href="#try-it-out">Try it out</a>
+	</h2>
+
+	<div>
+		<label for="name">Name</label>
+		<input type="text" id="name" name="name" bind:value={name} />
+	</div>
+
+	<div>
+		<label for="text">Text</label>
+		<textarea id="text" name="text" bind:value={text} />
+	</div>
+
+	<div>
+		<label class="font-bold text-primary text-lg" for="output">Output:</label>
+		<textarea id="output" readonly bind:value={casedTemplateText} />
+	</div>
+</section>
+
+<section>
 	<h2 id="how-it-works">
 		<a href="#how-it-works">How it works</a>
 	</h2>
@@ -214,27 +235,6 @@ export function __NaMe__Page({ _naMe_s }: __NaMe__PageProps) {
 			</ul>
 		</li>
 	</ol>
-</section>
-
-<section>
-	<h2 id="try-it-out">
-		<a href="#try-it-out">Try it out</a>
-	</h2>
-
-	<div>
-		<label for="name">Name</label>
-		<input type="text" id="name" name="name" bind:value={name} />
-	</div>
-
-	<div>
-		<label for="text">Text</label>
-		<textarea id="text" name="text" bind:value={text} />
-	</div>
-
-	<div>
-		<label class="font-bold text-primary text-lg" for="output">Output:</label>
-		<textarea id="output" readonly bind:value={casedTemplateText} />
-	</div>
 </section>
 
 <style lang="postcss">
