@@ -155,7 +155,7 @@
 		</div>
 
 		<div>
-			<b class="text-primary text-lg">Output:</b>
+			<b class="text-success text-lg">Output:</b>
 			{casedText}
 		</div>
 	</section>
