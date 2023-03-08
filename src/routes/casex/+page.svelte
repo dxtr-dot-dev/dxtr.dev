@@ -134,6 +134,27 @@
 </div>
 
 <section>
+	<h2 id="try-it-out">
+		<a href="#try-it-out">Try it out</a>
+	</h2>
+
+	<div>
+		<label for="text"> Text </label>
+		<input id="text" type="text" name="text" bind:value={text} />
+	</div>
+
+	<div>
+		<label for="pattern">Pattern</label>
+		<input id="pattern" type="text" name="pattern" bind:value={pattern} />
+	</div>
+
+	<div>
+		<b class="text-primary text-lg">Output:</b>
+		{casedText}
+	</div>
+</section>
+
+<section>
 	<h2 id="how-it-works">
 		<a href="#how-it-works">How it works</a>
 	</h2>
@@ -200,25 +221,4 @@
 
 		<li>Result: <i class="text-success">I Am The Real John Doe</i></li>
 	</ol>
-</section>
-
-<section>
-	<h2 id="try-it-out">
-		<a href="#try-it-out">Try it out</a>
-	</h2>
-
-	<div>
-		<label for="text"> Text </label>
-		<input id="text" type="text" name="text" bind:value={text} />
-	</div>
-
-	<div>
-		<label for="pattern">Pattern</label>
-		<input id="pattern" type="text" name="pattern" bind:value={pattern} />
-	</div>
-
-	<div>
-		<b class="text-primary text-lg">Output:</b>
-		{casedText}
-	</div>
 </section>
