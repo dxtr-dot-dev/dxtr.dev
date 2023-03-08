@@ -1,4 +1,7 @@
 <script lang="ts">
+	import ClipboardIcon from 'svelte-bootstrap-icons/lib/Clipboard.svelte';
+	import ClipboardCheckIcon from 'svelte-bootstrap-icons/lib/ClipboardCheck.svelte';
+
 	let copied = false;
 
 	function copyToClipboard(event: Event) {
@@ -23,9 +26,9 @@
 
 	<footer class:copied>
 		{#if copied}
-			<i class="bi bi-clipboard-check" /> copied
+			<ClipboardCheckIcon width="12px" /> copied
 		{:else}
-			<i class="bi bi-clipboard" /> click to copy
+			<ClipboardIcon width="12px" /> click to copy
 		{/if}
 	</footer>
 </div>

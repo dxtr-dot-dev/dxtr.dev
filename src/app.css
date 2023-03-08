@@ -80,11 +80,6 @@
 		@apply underline;
 	}
 
-	.container {
-		@apply max-w-screen-lg mx-auto;
-		@apply px-4;
-	}
-
 	div:has(label):has(input, textarea) {
 		@apply mb-4;
 	}
@@ -106,4 +101,15 @@
 	textarea {
 		@apply py-2 px-4 rounded border border-body bg-transparent;
 	}
+
+	.container {
+		@apply mx-auto;
+		@apply px-4;
+	}
+}
+
+svg.bi {
+	display: inline;
+	vertical-align: middle;
+	margin-top: -2px;
 }

@@ -2,6 +2,8 @@
 	import Code from '$lib/components/code.svelte';
 	import Head from '$lib/components/head.svelte';
 	import { casex } from '@dxtr.dev/casex';
+	import GithubIcon from 'svelte-bootstrap-icons/lib/Github.svelte';
+	import LightningChargeIcon from 'svelte-bootstrap-icons/lib/LightningCharge.svelte';
 
 	let text = 'i_am the-real JohnDoe';
 	let pattern = 'Ca Se';
@@ -56,7 +58,7 @@
 		The source code for this project is available on <a
 			href="https://github.com/dxtr-dot-dev/casex"
 			target="_blank"
-			rel="noreferrer"><i class="bi bi-github" /> GitHub</a
+			rel="noreferrer"><GithubIcon /> GitHub</a
 		>
 	</p>
 </section>
@@ -107,9 +109,9 @@
 			{#each Object.entries(common) as [styleName, stylePattern]}
 				<li>
 					<button
+						class:pattern-selected={pattern === stylePattern}
 						on:click={() => (pattern = stylePattern)}
-						class:selected-pattern={pattern === stylePattern}
-						><i class="bi bi-lightning-charge text-success" /> {styleName}: {stylePattern}</button
+						><LightningChargeIcon class="text-success" /> {styleName}: {stylePattern}</button
 					>
 				</li>
 			{/each}
@@ -123,9 +125,9 @@
 			{#each Object.entries(special) as [styleName, stylePattern]}
 				<li>
 					<button
+						class:pattern-selected={pattern === stylePattern}
 						on:click={() => (pattern = stylePattern)}
-						class:selected-pattern={pattern === stylePattern}
-						><i class="bi bi-lightning-charge text-success" /> {styleName}: {stylePattern}</button
+						><LightningChargeIcon class="text-success" /> {styleName}: {stylePattern}</button
 					>
 				</li>
 			{/each}
@@ -144,8 +146,7 @@
 		</h2>
 
 		<p class="text-sm">
-			You can click the <i class="bi bi-lightning-charge text-success" /> patterns to quickly go through
-			them!
+			You can click the <LightningChargeIcon class="text-success" /> patterns to quickly go through them!
 		</p>
 
 		<div>
@@ -235,7 +236,7 @@
 </section>
 
 <style lang="postcss">
-	.selected-pattern {
+	.pattern-selected {
 		@apply transition-all;
 		@apply bg-primary text-background px-2 rounded;
 	}

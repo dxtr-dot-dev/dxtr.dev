@@ -2,6 +2,7 @@
 	import Code from '$lib/components/code.svelte';
 	import Head from '$lib/components/head.svelte';
 	import { casexTemplate } from '@dxtr.dev/casex-template';
+	import GithubIcon from 'svelte-bootstrap-icons/lib/Github.svelte';
 
 	const common = {
 		lowercase: '__name__',
@@ -75,7 +76,7 @@ export function __NaMe__Page({ _naMe_s }: __NaMe__PageProps) {
 		The source code for this project is available on <a
 			href="https://github.com/dxtr-dot-dev/casex-template"
 			target="_blank"
-			rel="noreferrer"><i class="bi bi-github" /> GitHub</a
+			rel="noreferrer"><GithubIcon /> GitHub</a
 		>
 	</p>
 </section>

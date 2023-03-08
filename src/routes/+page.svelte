@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Head from '$lib/components/head.svelte';
+	import TwitterIcon from 'svelte-bootstrap-icons/lib/Twitter.svelte';
 </script>
 
 <Head />
@@ -20,7 +21,7 @@
 	<p>
 		Follow <span class="text-primary">DX</span>TR.DEV on
 		<a href="https://twitter.com/dxtr_dot_dev" target="_blank" rel="noreferrer"
-			><i class="bi bi-twitter" /> Twitter</a
+			><TwitterIcon /> Twitter</a
 		>
 	</p>
 </section>

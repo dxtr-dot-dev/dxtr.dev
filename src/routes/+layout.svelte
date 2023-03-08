@@ -1,7 +1,8 @@
 <script lang="ts">
 	import '@fontsource/courier-prime';
 	import '@fontsource/fira-mono';
-	import 'bootstrap-icons/font/bootstrap-icons.css';
+	import SunFillIcon from 'svelte-bootstrap-icons/lib/SunFill.svelte';
+	import MoonStarsFillIcon from 'svelte-bootstrap-icons/lib/MoonStarsFill.svelte';
 
 	import { page } from '$app/stores';
 
@@ -50,7 +51,7 @@
 					aria-current={$page.url.pathname === '/casex-template' ? 'page' : undefined}
 					class:selected={$page.url.pathname === '/casex-template'}
 				>
-					<a href="/casex-template">CASE<span class="text-primary">X</span> TEMPALTE</a>
+					<a href="/casex-template">CASE<span class="text-primary">X</span> TEMPLATE</a>
 				</li>
 
 				<li
@@ -61,11 +62,16 @@
 				</li>
 
 				<li>
-					<button class="relative text-primary" on:click={toggle}>
+					<button class="text-primary" on:click={toggle}>
 						<span class="sr-only">toggle dark mode</span>
 
-						<i class="dark:hidden bi bi-sun-fill" />
-						<i class="hidden dark:inline bi bi-moon-stars-fill" />
+						<span class="dark:hidden">
+							<SunFillIcon width="14px" />
+						</span>
+
+						<span class="hidden dark:inline">
+							<MoonStarsFillIcon width="14px" />
+						</span>
 					</button>
 				</li>
 			</ul>

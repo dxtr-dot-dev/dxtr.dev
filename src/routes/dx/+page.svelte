@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Head from '$lib/components/head.svelte';
+	import GithubIcon from 'svelte-bootstrap-icons/lib/Github.svelte';
 </script>
 
 <Head title="DX" />
@@ -21,7 +22,7 @@
 		The source code for this project is available on <a
 			href="https://github.com/dxtr-dot-dev/dx"
 			target="_blank"
-			rel="noreferrer"><i class="bi bi-github" /> GitHub</a
+			rel="noreferrer"><GithubIcon /> GitHub</a
 		>
 	</p>
 </section>
