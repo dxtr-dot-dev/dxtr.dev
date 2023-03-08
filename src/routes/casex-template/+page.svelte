@@ -207,32 +207,50 @@ export function __NaMe__Page({ _naMe_s }: __NaMe__PageProps) {
 			class="text-info">cool component</i
 		>
 		and the text
-		<i class="text-info">I have many _name_s, my favorite __na-me__ is the _NaMe_</i>.
+		<i class="text-info">I have many _name_s, my favorite __na-me__ is the _Na Me_</i>.
 	</p>
 
 	<ol>
 		<li>
-			The text provided gets scaneed for all , we get: <span class="text-info">
-				[_name_s, __na-me__, _NaMe_]
-			</span>
-		</li>
+			The text provided gets scanned and we extract the name patterns, resulting in:
 
-		<li>
-			Now we apply casex to each pattern and pluralize/singularize as necessary:
 			<ul>
 				<li>
 					<i class="text-info">_name_s</i> - ends with <span class="text-primary">_s</span> so it's
-					plural, with <span class="text-info">case</span> pattern
+					plural, with the <span class="text-info">name</span> pattern (all lowercase)
 				</li>
 
 				<li>
-					<i class="text-info">__na-me__</i> __ <span class="text-info">na-me</span> pattern
+					<i class="text-info">__na-me__</i> <span class="text-primary">__</span> double underscore
+					(no plural or singular transformation), with the <span class="text-info">na-me</span> pattern
+					(kebab-case)
 				</li>
 
 				<li>
-					<i class="text-info">_name_s</i> - plural, <span class="text-info">name</span> pattern
+					<i class="text-info">_Na Me_</i> - ends with <span class="text-primary">_</span> so it's
+					singular, with the <span class="text-info">NaMe</span> pattern (title case)
 				</li>
 			</ul>
+		</li>
+
+		<li>
+			The next step is applying the name <i class="text-info">cool component</i> to each part
+			extracted
+
+			<ul>
+				<li><i class="text-info">_name_s</i>: coolcomponents</li>
+				<li><i class="text-info">__na-me__</i>: cool-component</li>
+				<li><i class="text-info">_Na Me_</i>: Cool Component</li>
+			</ul>
+		</li>
+
+		<li>Replace the occurances and the result is...</li>
+
+		<li>
+			<span class="text-success"
+				>I have many <u>coolcomponents</u>, my favorite <u>cool-component</u> is the
+				<u>Cool Component</u></span
+			>
 		</li>
 	</ol>
 </section>

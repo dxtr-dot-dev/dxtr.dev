@@ -106,7 +106,9 @@
 		<ul>
 			{#each Object.entries(common) as [styleName, stylePattern]}
 				<li>
-					<button on:click={() => (pattern = stylePattern)}
+					<button
+						on:click={() => (pattern = stylePattern)}
+						class:selected-pattern={pattern === stylePattern}
 						><i class="bi bi-lightning-charge text-success" /> {styleName}: {stylePattern}</button
 					>
 				</li>
@@ -120,7 +122,9 @@
 		<ul>
 			{#each Object.entries(special) as [styleName, stylePattern]}
 				<li>
-					<button on:click={() => (pattern = stylePattern)}
+					<button
+						on:click={() => (pattern = stylePattern)}
+						class:selected-pattern={pattern === stylePattern}
 						><i class="bi bi-lightning-charge text-success" /> {styleName}: {stylePattern}</button
 					>
 				</li>
@@ -229,3 +233,10 @@
 		<li>Result: <i class="text-success">I Am The Real John Doe</i></li>
 	</ol>
 </section>
+
+<style lang="postcss">
+	.selected-pattern {
+		@apply transition-all;
+		@apply bg-primary text-background px-2 rounded;
+	}
+</style>
