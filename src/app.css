@@ -27,7 +27,10 @@
 
 	@font-face {
 		font-family: Mokoto;
-		src: url(/src/lib/fonts/Mokoto.otf);
+		font-style: normal;
+		font-weight: 400;
+		src: url(/src/lib/fonts/Mokoto.otf) format('otf');
+		font-display: swap;
 	}
 
 	.dark {
