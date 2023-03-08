@@ -54,13 +54,6 @@
 					<a href="/casex-template">CASE<span class="text-primary">X</span> TEMPLATE</a>
 				</li>
 
-				<li
-					aria-current={$page.url.pathname === '/dx' ? 'page' : undefined}
-					class:selected={$page.url.pathname === '/dx'}
-				>
-					<a href="/dx">D<span class="text-primary">X</span></a>
-				</li>
-
 				<li>
 					<button class="text-primary" on:click={toggle}>
 						<span class="sr-only">toggle dark mode</span>
