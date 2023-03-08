@@ -6,13 +6,14 @@
 	import { page } from '$app/stores';
 
 	import Logo from '$lib/components/logo.svelte';
-	import ThemeSwitcher from '$lib/components/theme-switcher.svelte';
 	import { useTheme } from '$lib/hooks/use-theme';
 	import { useThemeMeta } from '$lib/hooks/use-theme-meta';
 	import '../app.css';
 
 	const theme = useTheme();
 	useThemeMeta(theme);
+
+	$: toggle = () => theme.update((current) => (current === 'light' ? 'dark' : 'light'));
 </script>
 
 <svelte:head>
@@ -37,7 +38,7 @@
 		<div class="flex-1" />
 
 		<nav>
-			<ul class="gap-8 flex items-center">
+			<ul class="flex items-center text-sm">
 				<li
 					aria-current={$page.url.pathname === '/casex' ? 'page' : undefined}
 					class:selected={$page.url.pathname === '/casex'}
@@ -52,8 +53,20 @@
 					<a href="/casex-template">CASE<span class="text-primary">X</span> TEMPALTE</a>
 				</li>
 
+				<li
+					aria-current={$page.url.pathname === '/dx' ? 'page' : undefined}
+					class:selected={$page.url.pathname === '/dx'}
+				>
+					<a href="/dx">D<span class="text-primary">X</span></a>
+				</li>
+
 				<li>
-					<ThemeSwitcher bind:value={$theme} />
+					<button class="relative text-primary" on:click={toggle}>
+						<span class="sr-only">toggle dark mode</span>
+
+						<i class="dark:hidden bi bi-sun-fill" />
+						<i class="hidden dark:inline bi bi-moon-stars-fill" />
+					</button>
 				</li>
 			</ul>
 		</nav>
@@ -67,5 +80,17 @@
 <style lang="postcss">
 	.selected {
 		@apply font-bold underline;
+	}
+
+	li {
+		@apply leading-normal;
+	}
+
+	li > * {
+		@apply px-3;
+	}
+
+	li:not(:first-child):not(:last-child) {
+		@apply border-l border-l-paper;
 	}
 </style>
