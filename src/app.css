@@ -81,16 +81,25 @@
 		@apply px-4;
 	}
 
-	div:has(label):has(input) {
+	div:has(label):has(input, textarea) {
 		@apply mb-4;
 	}
 
-	label:has(+ input) {
+	label:has(+ input),
+	label:has(+ textarea) {
 		@apply block;
 	}
 
 	input[type='text'] {
+		@apply max-w-md w-full;
+	}
+
+	textarea {
+		@apply w-full resize-none;
+	}
+
+	input[type='text'],
+	textarea {
 		@apply py-2 px-4 rounded border border-body bg-transparent;
-		@apply max-w-md;
 	}
 }

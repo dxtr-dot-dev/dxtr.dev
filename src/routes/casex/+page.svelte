@@ -33,7 +33,7 @@
 />
 
 <section>
-	<h1>CASE<span class="text-primary">X</span></h1>
+	<h1 id="casex">CASE<span class="text-primary">X</span></h1>
 
 	<p>
 		Case<span class="text-primary">x</span> is a function that applies a case style given a pattern.
@@ -46,7 +46,7 @@
 </section>
 
 <section>
-	<h2>Source Code</h2>
+	<h2 id="source-code">Source Code</h2>
 
 	<p>
 		The source code for this project is available on <a
@@ -58,33 +58,41 @@
 </section>
 
 <section>
-	<h2>Install</h2>
+	<h2 id="install">Install</h2>
+
+	<p>
+		Case<span class="text-primary">x</span> is currently only available in Javascript (with Typescript
+		types) as a ES Module. If you're interested in porting it to another language, feel free to reach
+		out!
+	</p>
 
 	<Code>npm install -D @dxtr.dev/casex</Code>
 
 	<p>or</p>
 
 	<Code>yarn add @dxtr.dev/casex</Code>
-
-	<p>then</p>
-
-	<Code>import {'{ casex }'} from '@dxtr.dev/casex';</Code>
 </section>
 
 <section>
-	<h2>Usage</h2>
+	<h2 id="usage">Usage</h2>
 
 	<p>
-		Case<span class="text-primary">x</span> is pretty straight forward. You provide the text you want
-		converted, and the pattern you'd like to apply.
+		<span class="text-info">{`{ casex }`}</span> is available as a named import, it expects a
+		<span class="text-info">text</span>
+		and a <span class="text-info">pattern</span>. Here's how it looks like:
 	</p>
 
-	<Code>casex({`{ text: 'your text', pattern: 'ca-se' }`})</Code>
+	<Code>
+		import {'{ casex }'} from '@dxtr.dev/casex';
+		<br />
+		<br />
+		casex({`{ text: 'your text', pattern: 'ca-se' }`})
+	</Code>
 </section>
 
 <div class="md:grid md:grid-cols-2">
 	<section>
-		<h2>Common patterns</h2>
+		<h2 id="common-patterns">Common patterns</h2>
 
 		<ul>
 			{#each Object.entries(common) as [styleName, stylePattern]}
@@ -96,7 +104,13 @@
 	</section>
 
 	<section>
-		<h2>Special patterns</h2>
+		<h2 id="special-patterns">Special patterns</h2>
+
+		<p class="mb-2 ml-4">
+			<span class="text-info">*</span> for keeping the current capitalization
+			<br />
+			<span class="text-info">-</span> is used for removing characters
+		</p>
 
 		<ul>
 			{#each Object.entries(special) as [styleName, stylePattern]}
@@ -109,7 +123,7 @@
 </div>
 
 <section>
-	<h2>How it works</h2>
+	<h2 id="how-it-works">How it works</h2>
 
 	<p>To understand how the style convertion happens, let's go step by step.</p>
 
@@ -162,16 +176,16 @@
 </section>
 
 <section>
-	<h2>Try it out</h2>
+	<h2 id="try-it-out">Try it out</h2>
 
 	<div>
 		<label for="text"> Text </label>
-		<input id="text" type="text" class="w-full rounded" name="text" bind:value={text} />
+		<input id="text" type="text" name="text" bind:value={text} />
 	</div>
 
 	<div>
 		<label for="pattern">Pattern</label>
-		<input id="pattern" type="text" class="w-full rounded" name="pattern" bind:value={pattern} />
+		<input id="pattern" type="text" name="pattern" bind:value={pattern} />
 	</div>
 
 	<div>
