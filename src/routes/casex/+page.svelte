@@ -135,7 +135,9 @@
 
 <section>
 	<h2 id="try-it-out">
-		<a href="#try-it-out">Try it out</a>
+		<a href="#try-it-out"
+			>Try it out <i class="text-success text-sm">(tip: you can click the patterns above)</i></a
+		>
 	</h2>
 
 	<div>
