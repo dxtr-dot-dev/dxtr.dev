@@ -33,7 +33,9 @@
 />
 
 <section>
-	<h1 id="casex">CASE<span class="text-primary">X</span></h1>
+	<h1 id="casex">
+		<a href="#casex">CASE<span class="text-primary">X</span></a>
+	</h1>
 
 	<p>
 		Case<span class="text-primary">x</span> is a function that applies a case style given a pattern.
@@ -46,7 +48,9 @@
 </section>
 
 <section>
-	<h2 id="source-code">Source Code</h2>
+	<h2 id="source-code">
+		<a href="#source-code">Source Code</a>
+	</h2>
 
 	<p>
 		The source code for this project is available on <a
@@ -58,12 +62,13 @@
 </section>
 
 <section>
-	<h2 id="install">Install</h2>
+	<h2 id="install">
+		<a href="#install">Install</a>
+	</h2>
 
 	<p>
 		Case<span class="text-primary">x</span> is currently only available in Javascript (with Typescript
-		types) as a ES Module. If you're interested in porting it to another language, feel free to reach
-		out!
+		types) as a ES Module.
 	</p>
 
 	<Code>npm install -D @dxtr.dev/casex</Code>
@@ -74,7 +79,9 @@
 </section>
 
 <section>
-	<h2 id="usage">Usage</h2>
+	<h2 id="usage">
+		<a href="#usage">Usage</a>
+	</h2>
 
 	<p>
 		<span class="text-info">{`{ casex }`}</span> is available as a named import, it expects a
@@ -92,7 +99,9 @@
 
 <div class="md:grid md:grid-cols-2">
 	<section>
-		<h2 id="common-patterns">Common patterns</h2>
+		<h2 id="common-patterns">
+			<a href="#common-patterns">Common patterns</a>
+		</h2>
 
 		<ul>
 			{#each Object.entries(common) as [styleName, stylePattern]}
@@ -104,7 +113,9 @@
 	</section>
 
 	<section>
-		<h2 id="special-patterns">Special patterns</h2>
+		<h2 id="special-patterns">
+			<a href="#special-patterns">Special patterns</a>
+		</h2>
 
 		<p class="mb-2 ml-4">
 			<span class="text-info">*</span> for keeping the current capitalization
@@ -123,21 +134,17 @@
 </div>
 
 <section>
-	<h2 id="how-it-works">How it works</h2>
-
-	<p>To understand how the style convertion happens, let's go step by step.</p>
+	<h2 id="how-it-works">
+		<a href="#how-it-works">How it works</a>
+	</h2>
 
 	<p>
-		Let's use as an example the common title pattern <i class="text-info">Ca se</i> and the text
+		To understand how the style convertion happens, let's go step by step. We'll use as an example
+		the common title pattern <i class="text-info">Ca se</i> and the text
 		<i class="text-info">i_am the-real JohnDoe</i>.
 	</p>
 
 	<ol>
-		<li>
-			<i class="text-info">i_am the-real JohnDoe</i> is separated into words by upper case letters,
-			space, - and _. This gives us <i class="text-info">[i, am, the, real, John, Doe]</i>
-		</li>
-
 		<li>
 			The pattern <i class="text-info">Ca Se</i> is interpreted. Each letter corresponds to one part
 			of the string
@@ -154,7 +161,17 @@
 		</li>
 
 		<li>
-			With the pattern gets applied to the words we get:
+			<i class="text-info">i_am the-real JohnDoe</i> is separated into words by
+			<span class="text-primary">upper case letters</span>,
+			<span class="text-primary">space</span>, <span class="text-primary">-</span> and
+			<span class="text-primary">_</span>. This gives us
+			<i class="text-info">[i, am, the, real, John, Doe]</i>
+		</li>
+
+		<li>
+			We combine the two parts, applying the <span class="text-info">pattern</span> to each
+			<span class="text-info">word</span>
+			and we get:
 
 			<ul>
 				<li><i class="text-info">I</i> - applied <i class="text-info">Ca</i></li>
@@ -176,7 +193,9 @@
 </section>
 
 <section>
-	<h2 id="try-it-out">Try it out</h2>
+	<h2 id="try-it-out">
+		<a href="#try-it-out">Try it out</a>
+	</h2>
 
 	<div>
 		<label for="text"> Text </label>

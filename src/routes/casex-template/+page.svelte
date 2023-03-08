@@ -23,7 +23,7 @@
 	let text = `// __na-me__-page.ts
 
 type __NaMe__PageProps {
-  {'_naMe_s'}: _NaMe_[]
+  _naMe_s: _NaMe_[]
 }
 
 export function __NaMe__Page({ _naMe_s }: __NaMe__PageProps) {
@@ -51,7 +51,9 @@ export function __NaMe__Page({ _naMe_s }: __NaMe__PageProps) {
 />
 
 <section>
-	<h1 id="casex-template">CASE<span class="text-primary">X</span> TEMPLATE</h1>
+	<h1 id="casex-template">
+		<a href="#casex-template">CASE<span class="text-primary">X</span> TEMPLATE</a>
+	</h1>
 
 	<p>
 		Casex Template is a simple template engine that applies the casex pattern to all occurances in a
@@ -59,14 +61,15 @@ export function __NaMe__Page({ _naMe_s }: __NaMe__PageProps) {
 	</p>
 
 	<p>
-		Often creating templates feels tedious and time consuming, we wanted to create an engine that
-		lets you pretty much copy an example file, replace a few <i class="text-info">__name__</i> patterns
-		and you should be good to go.
+		Often creating templates feels tedious and time consuming, I wanted to create an engine that
+		lets someone pretty much copy an example file, replace a few words and you should be good to go.
 	</p>
 </section>
 
 <section>
-	<h2 id="source-code">Source Code</h2>
+	<h2 id="source-code">
+		<a href="#source-code">Source Code</a>
+	</h2>
 
 	<p>
 		The source code for this project is available on <a
@@ -78,12 +81,13 @@ export function __NaMe__Page({ _naMe_s }: __NaMe__PageProps) {
 </section>
 
 <section>
-	<h2 id="install">Install</h2>
+	<h2 id="install">
+		<a href="#install">Install</a>
+	</h2>
 
 	<p>
 		Case<span class="text-primary">x</span> Template is currently only available in Javascript (with
-		Typescript types) as a ES Module. If you're interested in porting it to another language, feel free
-		to reach out!
+		Typescript types) as a ES Module.
 	</p>
 
 	<Code>npm install -D @dxtr.dev/casex-template</Code>
@@ -94,7 +98,9 @@ export function __NaMe__Page({ _naMe_s }: __NaMe__PageProps) {
 </section>
 
 <section>
-	<h2 id="usage">Usage</h2>
+	<h2 id="usage">
+		<a href="#usage">Usage</a>
+	</h2>
 
 	<p>
 		<span class="text-info">{`{ casexTemplate }`}</span> is available as a named import, it expects
@@ -115,7 +121,9 @@ export function __NaMe__Page({ _naMe_s }: __NaMe__PageProps) {
 
 <div class="md:grid md:grid-cols-2">
 	<section>
-		<h2 id="common-patterns">Common patterns</h2>
+		<h2 id="common-patterns">
+			<a href="#common-patterns">Common patterns</a>
+		</h2>
 
 		<ul>
 			{#each Object.entries(common) as [styleName, stylePattern]}
@@ -127,7 +135,9 @@ export function __NaMe__Page({ _naMe_s }: __NaMe__PageProps) {
 	</section>
 
 	<section>
-		<h2 id="pluralization">Pluralization</h2>
+		<h2 id="pluralization">
+			<a href="#pluralization">Pluralization</a>
+		</h2>
 
 		<p class="mb-2 ml-4">
 			<span class="text-info">_name_</span> with only one <span class="text-info">_</span> means
@@ -156,7 +166,9 @@ export function __NaMe__Page({ _naMe_s }: __NaMe__PageProps) {
 </div>
 
 <section>
-	<h2 id="how-it-works">How it works</h2>
+	<h2 id="how-it-works">
+		<a href="#how-it-works">How it works</a>
+	</h2>
 
 	<p>
 		Case<span class="text-primary">x</span> template uses
@@ -164,11 +176,25 @@ export function __NaMe__Page({ _naMe_s }: __NaMe__PageProps) {
 		of <i class="text-info">__name__</i>-like patterns in a text.
 	</p>
 
-	<p />
+	<p>
+		To understand how the engine works, let's go step by step. We'll use as an example the name <i
+			class="text-info">cool component</i
+		>
+		and the text
+		<i class="text-info">I have many _name_s, my favorite __na-me__ is the _NaMe_</i>.
+	</p>
+
+	<ol>
+		<li>
+			<i class="text-info">I have many _name_s, my favorite __na-me__ is the _NaMe_</i>.
+		</li>
+	</ol>
 </section>
 
 <section>
-	<h2 id="try-it-out">Try it out</h2>
+	<h2 id="try-it-out">
+		<a href="#try-it-out">Try it out</a>
+	</h2>
 
 	<div>
 		<label for="name">Name</label>
