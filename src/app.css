@@ -55,7 +55,8 @@
 	}
 
 	p {
-		@apply leading-10;
+		@apply leading-6;
+		@apply mb-8;
 	}
 
 	ul:not(:has(a:only-child)) {

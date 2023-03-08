@@ -140,11 +140,12 @@ export function __NaMe__Page({ _naMe_s }: __NaMe__PageProps) {
 		</h2>
 
 		<p class="mb-2 ml-4">
-			<span class="text-info">_name_</span> with only one <span class="text-info">_</span> means
-			singular
+			<span class="text-primary">_name_</span> with only one <span class="text-primary">_</span>
+			means singular
 			<br />
-			<span class="text-info">_name_</span> with only one <span class="text-info">_</span> and
-			<span class="text-info">s</span> means plural.
+			<span class="text-primary">_name_s</span> with only one <span class="text-primary">_</span>
+			and
+			<span class="text-primary">s</span> means plural.
 			<br />
 		</p>
 
@@ -171,13 +172,17 @@ export function __NaMe__Page({ _naMe_s }: __NaMe__PageProps) {
 	</h2>
 
 	<p>
-		Case<span class="text-primary">x</span> template uses
-		<a href="/casex#how-it-works">case<span class="text-primary">x</span></a> to replace instances
-		of <i class="text-info">__name__</i>-like patterns in a text.
+		Case<span class="text-primary">x</span> Template scans the text for
+		<span class="text-primary">casex-like occurances</span> of
+		<span class="text-primary">_name_</span>
+		and <span class="text-primary">__name__</span>
+		uses
+		<a href="/casex#how-it-works">case<span class="text-primary">x</span></a> to replaces them
+		according to their Case<span class="text-primary">x</span> pattern.
 	</p>
 
 	<p>
-		To understand how the engine works, let's go step by step. We'll use as an example the name <i
+		To get a practical understanding, let's break down the steps, we'll use as an example the name <i
 			class="text-info">cool component</i
 		>
 		and the text
@@ -186,7 +191,27 @@ export function __NaMe__Page({ _naMe_s }: __NaMe__PageProps) {
 
 	<ol>
 		<li>
-			<i class="text-info">I have many _name_s, my favorite __na-me__ is the _NaMe_</i>.
+			The text provided gets scaneed for all , we get: <span class="text-info">
+				[_name_s, __na-me__, _NaMe_]
+			</span>
+		</li>
+
+		<li>
+			Now we apply casex to each pattern and pluralize/singularize as necessary:
+			<ul>
+				<li>
+					<i class="text-info">_name_s</i> - ends with <span class="text-primary">_s</span> so it's
+					plural, with <span class="text-info">case</span> pattern
+				</li>
+
+				<li>
+					<i class="text-info">__na-me__</i> __ <span class="text-info">na-me</span> pattern
+				</li>
+
+				<li>
+					<i class="text-info">_name_s</i> - plural, <span class="text-info">name</span> pattern
+				</li>
+			</ul>
 		</li>
 	</ol>
 </section>

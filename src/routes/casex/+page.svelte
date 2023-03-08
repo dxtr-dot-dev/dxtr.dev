@@ -139,8 +139,18 @@
 	</h2>
 
 	<p>
-		To understand how the style convertion happens, let's go step by step. We'll use as an example
-		the common title pattern <i class="text-info">Ca se</i> and the text
+		Case<span class="text-primary">x</span> takes the
+		<span class="text-primary">first two letters</span> and
+		<span class="text-primary">last two letters</span>
+		to extract a pattern (lower case or upper case), everything in between is
+		<span class="text-primary">glue</span> that gets added between words. All the examples below
+		will use the word <span class="text-info">case</span> to express the pattern, but it could be "name",
+		or "abcd", or any other 4 letters.
+	</p>
+
+	<p>
+		To have more concrete understanding, let's go step by step. We'll use as an example the common
+		title pattern <i class="text-info">Ca se</i> and the text
 		<i class="text-info">i_am the-real JohnDoe</i>.
 	</p>
 
