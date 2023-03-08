@@ -106,55 +106,60 @@
 		<ul>
 			{#each Object.entries(common) as [styleName, stylePattern]}
 				<li>
-					<button on:click={() => (pattern = stylePattern)}>{styleName}: {stylePattern}</button>
+					<button on:click={() => (pattern = stylePattern)}
+						><i class="bi bi-lightning-charge text-success" /> {styleName}: {stylePattern}</button
+					>
 				</li>
 			{/each}
 		</ul>
-	</section>
 
-	<section>
 		<h2 id="special-patterns">
 			<a href="#special-patterns">Special patterns</a>
 		</h2>
 
-		<p class="mb-2 ml-4">
-			<span class="text-info">*</span> for keeping the current capitalization
-			<br />
-			<span class="text-info">-</span> is used for removing characters
-		</p>
-
 		<ul>
 			{#each Object.entries(special) as [styleName, stylePattern]}
 				<li>
-					<button on:click={() => (pattern = stylePattern)}>{styleName}: {stylePattern}</button>
+					<button on:click={() => (pattern = stylePattern)}
+						><i class="bi bi-lightning-charge text-success" /> {styleName}: {stylePattern}</button
+					>
 				</li>
 			{/each}
 		</ul>
+
+		<p class="mt-4 ml-4">
+			<span class="text-primary">*</span> for keeping the current capitalization
+			<br />
+			<span class="text-primary">-</span> is used for removing characters
+		</p>
+	</section>
+
+	<section>
+		<h2 id="try-it-out">
+			<a href="#try-it-out">Try it out</a>
+		</h2>
+
+		<p class="text-sm">
+			You can click the <i class="bi bi-lightning-charge text-success" /> patterns to quickly go through
+			them!
+		</p>
+
+		<div>
+			<label for="text"> Text </label>
+			<input id="text" type="text" name="text" bind:value={text} />
+		</div>
+
+		<div>
+			<label for="pattern">Pattern</label>
+			<input id="pattern" type="text" name="pattern" bind:value={pattern} />
+		</div>
+
+		<div>
+			<b class="text-primary text-lg">Output:</b>
+			{casedText}
+		</div>
 	</section>
 </div>
-
-<section>
-	<h2 id="try-it-out">
-		<a href="#try-it-out"
-			>Try it out <i class="text-success text-sm">(tip: you can click the patterns above)</i></a
-		>
-	</h2>
-
-	<div>
-		<label for="text"> Text </label>
-		<input id="text" type="text" name="text" bind:value={text} />
-	</div>
-
-	<div>
-		<label for="pattern">Pattern</label>
-		<input id="pattern" type="text" name="pattern" bind:value={pattern} />
-	</div>
-
-	<div>
-		<b class="text-primary text-lg">Output:</b>
-		{casedText}
-	</div>
-</section>
 
 <section>
 	<h2 id="how-it-works">
